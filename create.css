@@ -1,0 +1,265 @@
+body{
+    background-color: rgb(250,250,250);
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif; /* Added a default font-family */
+}
+
+.mm{
+    color: rgb(255, 220, 220);
+    background: green;
+    padding: 2px;
+    border: 1px solid green;
+    border-radius:100%;
+    margin-right:9px ;
+
+  }
+  .jj{
+color: green;
+transition: 2s all;
+
+  }
+  #logoo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .tb{
+    clip-path: circle(50% at 50% 50%);
+    height: 130px;
+    width: 130px ;
+    object-fit: cover;
+  }
+  
+  .kit:hover{
+    /* border:1px solid gray; */
+    background-color:rgb(242,242,242);
+    
+    
+  }
+  .mayala {
+    padding: 10px;
+    text-align: center; /* Center content */
+  }
+  .card {
+    width: 100%;
+    max-width: 18rem; /* Adjust as needed */
+    margin: 10px auto; /* Center the cards horizontally */
+  }
+
+  .kit:focus-within{
+    color: blue !important;
+    background-color: rgb(242,242,242);
+  }
+  .jk{
+    margin-left: 56em;
+  }
+  .k1{
+    font-size: 11px;
+  }
+  .mt{
+    margin-top: 60px;
+    background-color:white ;
+  }
+  .maya{
+    box-shadow: 2px 2px 2px 2px black;
+    height: fit-content;
+    margin-top: 60px ;
+    display: block;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    
+  }
+  /* .mls{
+    ;
+  } */
+  .h{
+    height: 230px;
+    position: relative;
+  }
+
+  .input-div {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgb(1, 235, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+    animation: flicker 2s linear infinite;
+  }
+  
+  .icon {
+    color: rgb(1, 235, 252);
+    font-size: 2rem;
+    cursor: pointer;
+    animation: iconflicker 2s linear infinite;
+  }
+  
+  .input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer !important;
+  }
+  
+  @keyframes flicker {
+    0% {
+      border: 2px solid rgb(1, 235, 252);
+      box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+    }
+  
+    5% {
+      border: none;
+      box-shadow: none;
+    }
+  
+    10% {
+      border: 2px solid rgb(1, 235, 252);
+      box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+    }
+  
+    25% {
+      border: none;
+      box-shadow: none;
+    }
+  
+    30% {
+      border: 2px solid rgb(1, 235, 252);
+      box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+    }
+  
+    100% {
+      border: 2px solid rgb(1, 235, 252);
+      box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+    }
+  }
+  
+  @keyframes iconflicker {
+    0% {
+      opacity: 1;
+    }
+  
+    5% {
+      opacity: 0.2;
+    }
+  
+    10% {
+      opacity: 1;
+    }
+  
+    25% {
+      opacity: 0.2;
+    }
+  
+    30% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  .lol{
+    left: 80px;
+    bottom: 50px;
+  }
+  .dt{
+    font-size: 13px;
+  }
+  .obj{
+    margin-left: 40px;
+  }
+  .lit{
+    list-style: none;
+  }
+  .kan{
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .og{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+  /* @media (max-width: 1115px) {
+    #logoo {
+        display: none;
+    }
+    .jk {
+        margin-left: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .jac {
+        width: 100% !important;
+        padding: 0 10px;
+    }
+    .mj {
+        display: block !important;
+        z-index: 2;
+    }}
+   .bi-house-fill,.bi-compass,.bi-list-task,.bi-people-fill,.bi-shop,.bi-person-circle,.bi-question-circle,.bi-box-arrow-left{
+    font-size: 20px;
+    margin-bottom: 20px;
+   } */
+
+
+
+  .carousel_container {
+    width: max-content;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .slider {
+    transition: transform 1s ease-in-out;
+  }
+  .carousel_container::-webkit-scrollbar {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    /* Sidebar adjustments */
+    .start-0 {
+      text-align: center; /* Center align for small screens */
+    }
+    #prev, #next {
+      display: none;
+    }
+  
+    .mt {
+      margin-top: 0; /* Remove top margin for small screens */
+    }
+  
+    .maya {
+      margin-top: 0; /* Remove top margin for small screens */
+    }
+  
+    .kit {
+      /* Your responsive styles for .kit elements */
+    }
+  
+    /* Adjust card styles for smaller screens */
+    #cards {
+      width: 100%; /* Full width for small screens */
+    }
+  
+    /* Adjust slider styles for smaller screens */
+    .slider {
+      width: 100%; /* Full width for small screens */
+    }
+  
+    /* Additional adjustments for other elements as needed */
+  }
+  
+ 

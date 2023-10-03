@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+
+</head>
+<body>
+    <h1>hello world</h1>
+    <h1>Welcome <span id="testt"></span></h1>
+</body>
+</html>
+<script>
+    const firebaseConfig = {
+     apiKey: "AIzaSyDIOeF4AYWn9DnDEmiEC_1ydAikreRhX0g",
+     authDomain: "sam-kahoot.firebaseapp.com",
+     projectId: "sam-kahoot",
+     storageBucket: "sam-kahoot.appspot.com",
+     messagingSenderId: "190838727877",
+     appId: "1:190838727877:web:f134c75b95da5439c8fcac"
+   };
+       const app = firebase.initializeApp(firebaseConfig);
+       var provider = new firebase.auth.GoogleAuthProvider();
+ </script>
+<script>
+    let testt = document.getElementById("testt")
+    function checkuser(){
+        firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/v8/firebase.User
+            var uid = user.uid;
+            console.log(user.email)
+            testt.innerHTML = `${user.email}`
+            // ...
+        } else {
+            // User is signed out
+            // ...
+            window.location.href = "login.html"
+        }
+        });
+    }
+    checkuser()
+</script>

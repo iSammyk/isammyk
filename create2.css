@@ -1,0 +1,191 @@
+/* Base styles for larger screens */
+body {
+    background-color: rgb(250, 250, 250);
+    overflow-x: hidden;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif; /* Added a default font-family */
+  }
+  
+  /* Header styles */
+  .kate {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* Logo styles */
+  #logoo {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Sidebar styles */
+  .jac {
+    width: 100% !important;
+    padding: 0 10px;
+  }
+  
+  /* Navigation links styles */
+  .kit {
+    color: black; /* Improved contrast for links */
+    font-weight: 600; /* Increased font weight for links */
+    text-decoration: none;
+  }
+  
+  /* Navigation links hover styles */
+  .kit:hover {
+    background-color: rgb(242, 242, 242);
+  }
+  
+  /* User profile picture container styles */
+  .input-div {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgb(1, 235, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 100px rgb(1, 235, 252),
+      inset 0px 0px 10px rgb(1, 235, 252), 0px 0px 5px rgb(255, 255, 255);
+    animation: flicker 2s linear infinite;
+  }
+  
+  /* Icon styles inside the profile picture container */
+  .icon {
+    color: rgb(1, 235, 252);
+    font-size: 2rem;
+    cursor: pointer;
+    animation: iconflicker 2s linear infinite;
+  }
+  
+  /* File input styles */
+  .input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer !important;
+  }
+  
+  /* Media queries for smaller screens */
+  @media (max-width: 767px) {
+    /* Sidebar adjustments */
+    .start-0 {
+      text-align: center; /* Center align for small screens */
+    }
+  
+    .mt {
+      margin-top: 0; /* Remove top margin for small screens */
+    }
+  
+    .maya {
+      margin-top: 0; /* Remove top margin for small screens */
+    }
+  
+    .kit {
+      /* Your responsive styles for .kit elements */
+    }
+  
+    /* Adjust card styles for smaller screens */
+    #cards {
+      width: 100%; /* Full width for small screens */
+      background-color: red; /* Adjust as needed */
+    }
+  
+    /* Adjust slider styles for smaller screens */
+    .slider {
+      background-color: blue; /* Adjust as needed */
+      width: 100%; /* Full width for small screens */
+    }
+  
+    /* Additional adjustments for other elements as needed */
+  }
+  
+  /* Keyframes for animations */
+  @keyframes flicker {
+    /* Your flicker animation keyframes */
+  }
+  
+  @keyframes iconflicker {
+    /* Your icon flicker animation keyframes */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    @keyframes flicker {
+      0% {
+        border: 2px solid rgb(1, 235, 252);
+        box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+      }
+    
+      5% {
+        border: none;
+        box-shadow: none;
+      }
+    
+      10% {
+        border: 2px solid rgb(1, 235, 252);
+        box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+      }
+    
+      25% {
+        border: none;
+        box-shadow: none;
+      }
+    
+      30% {
+        border: 2px solid rgb(1, 235, 252);
+        box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+      }
+    
+      100% {
+        border: 2px solid rgb(1, 235, 252);
+        box-shadow: 0px 0px 100px rgb(1, 235, 252) , inset 0px 0px 10px rgb(1, 235, 252),0px 0px 5px rgb(255, 255, 255);
+      }
+    }
+    
+    @keyframes iconflicker {
+      0% {
+        opacity: 1;
+      }
+    
+      5% {
+        opacity: 0.2;
+      }
+    
+      10% {
+        opacity: 1;
+      }
+    
+      25% {
+        opacity: 0.2;
+      }
+    
+      30% {
+        opacity: 1;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+  

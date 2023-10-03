@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Your existing CSS styles */
+
+        .correct-answer {
+            background-color: #27ae60; /* Green for correct answer */
+            color: #fff; /* White text for correct answer */
+        }
+
+        .wrong-answer {
+            background-color: #e74c3c; /* Red for wrong answer */
+            color: #fff; /* White text for wrong answer */
+        }
+
+        .question-timer {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .question-number {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .leaderboard {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .leaderboard-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .leaderboard-item {
+            margin: 5px 0;
+        }
+
+        .mad{
+            /* display: flex; */
+            /* width: 90%; */
+            flex-direction: row;
+            justify-content: space-evenly;
+            row-gap: 20px;
+        }
+        .answer-btn{
+            width: 45%;
+            /* border: none; */
+            border-radius: 10px;
+            padding: 2%;
+        }
+    </style>
+</head>
+<body>
+  
+
+
+<main class="container mx-auto w-75 bg-info mt-2">
+    
+    <div class="quiz-container">
+        <div class="question-container">
+            <p class="question-number">Q: 1</p>
+            <p class="question-text bg-light p-2 fs-6 text-center" style="border-radius: 20px;">What is the capital of France?</p>
+        </div>
+        <div class="answer-container mad bg-light">
+            <button class="answer-btn my-1">Paris</button>
+            <button class="answer-btn my-1">London</button>
+            <button class="answer-btn my-1">Berlin</button>
+            <button class="answer-btn my-1">Madrid</button>
+        </div>
+        <div class="question-timer">
+            Time left: <span id="time-left">20</span> seconds
+        </div>
+    </div>
+    <div class="result-container">
+        <p class="result-text">Result: 0 / 0</p>
+    </div>
+    <div class="leaderboard">
+        <p>Leaderboard:</p>
+        <ul id="leaderboard-list">
+            <!-- Leaderboard entries will be added here dynamically -->
+        </ul>
+    </div>
+    
+</main>
+    <script>
+        const questionNumber = document.querySelector('.question-number');
+        const questionText = document.querySelector('.question-text');
+        const answerButtons = document.querySelectorAll('.answer-btn');
+        const timeLeft = document.getElementById('time-left');
+        const resultText = document.querySelector('.result-text');
+        const leaderboardList = document.getElementById('leaderboard-list');
+
+        const questions = [
+            {
+                question: 'What is the capital of France?',
+                answers: ['Paris', 'London', 'Berlin', 'Madrid'],
+                correctAnswer: 'Paris',
+                points: 1000,
+                timeLimit: 20, 
+            },
+            {
+                question: 'What is the capital of remm?',
+                answers: ['Paris', 'loppp', 'red', 'Madrid'],
+                correctAnswer: 'loppp',
+                points: 1000,
+                timeLimit: 20, 
+            },
+            {
+                question: 'What is the capital of taiwo?',
+                answers: ['Paris', 'kaooo', 'Berlin', 'mumu'],
+                correctAnswer: 'mumu',
+                points: 1000,
+                timeLimit: 20, 
+            }
+            // Add more questions here...
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timeRemaining = questions[currentQuestionIndex].timeLimit;
+        let timerInterval;
+
+        function displayQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionNumber.textContent = `Q: ${currentQuestionIndex + 1}`;
+            questionText.textContent = currentQuestion.question;
+            answerButtons.forEach((btn, index) => {
+                btn.textContent = currentQuestion.answers[index];
+                btn.classList.remove('correct-answer', 'wrong-answer');
+                btn.disabled = false;
+                btn.addEventListener('click', () => checkAnswer(btn.textContent));
+            });
+            timeRemaining = currentQuestion.timeLimit;
+            startTimer();
+        }
+
+        function checkAnswer(selectedAnswer) {
+            const currentQuestion = questions[currentQuestionIndex];
+            clearInterval(timerInterval);
+            answerButtons.forEach(btn => {
+                if (btn.textContent === currentQuestion.correctAnswer) {
+                    btn.classList.add('correct-answer');
+                } else if (btn.textContent === selectedAnswer) {
+                    btn.classList.add('wrong-answer');
+                }
+                btn.disabled = true;
+            });
+
+            if (selectedAnswer === currentQuestion.correctAnswer) {
+                score += currentQuestion.points;
+            }
+
+            resultText.textContent = `Result: ${score} / ${questions.reduce((total, q) => total + q.points, 0)}`;
+
+            setTimeout(() => {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    displayQuestion();
+                } else {
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                timeLeft.textContent = timeRemaining;
+                if (timeRemaining === 0) {
+                    checkAnswer('');
+                }
+            }, 1000);
+        }
+
+        function endGame() {
+            questionNumber.textContent = 'Quiz Completed!';
+            questionText.textContent = '';
+            answerButtons.forEach(btn => btn.remove());
+            timeLeft.textContent = '0';
+            clearInterval(timerInterval);
+            showLeaderboard();
+        }
+
+        // function showLeaderboard() {
+        //     leaderboardList.innerHTML = '';
+        //     const leaderboardData = [
+        //         { name: 'Player 1', score: 5000 },
+        //         { name: 'Player 2', score: 4000 },
+        //         { name: 'Player 3', score: 3000 },
+        //         // Add more leaderboard data here...
+        //     ];
+
+        //     leaderboardData.forEach((entry, index) => {
+        //         const listItem = document.createElement('li');
+        //         listItem.classList.add('leaderboard-item');
+        //         listItem.textContent = `${index + 1}. ${entry.name} - ${entry.score} points`;
+        //         leaderboardList.appendChild(listItem);
+        //     });
+        // }
+
+        displayQuestion();
+
+    </script>
+</body>
+</html>
