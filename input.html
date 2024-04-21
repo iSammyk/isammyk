@@ -118,12 +118,15 @@ button:hover .play {
         </p>
       </div>
 
-    
+      <!-- <main class="row">
+        <div class="col-sm-4 bg-danger ">big</div>
+        <div class="col-sm-3 bg-black h-25">small</div>
+      </main> -->
 </body>
 </html>
 <script>
     const firebaseConfig = {
-        apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
+     apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
     authDomain: "isammy-k.firebaseapp.com",
     projectId: "isammy-k",
     storageBucket: "isammy-k.appspot.com",
@@ -142,12 +145,12 @@ button:hover .play {
     console.log(codee);
 
     let allQues
-    load()
 
     function load(){
-    var docRef = db.collection("just").doc("LA");
-    docRef.get().then((doc) => {
+      var docRef = db.collection("just").doc("151030");
+      docRef.get().then((doc) => {
         if (doc.exists) {
+          alert("exists")
             let quizzes = doc.data()
             allQues = quizzes.mygamepin
             console.log(allQues)
@@ -161,6 +164,7 @@ button:hover .play {
         // const quiz = quizzes.find(quiz => quiz.gamePin === userPin);
         // window.location.href = "username.html"
       }
+    load()
       
     function playy(ev){
       let userPin = coded.value.trim()

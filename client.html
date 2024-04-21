@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-storage-compat.js"></script>
+    <title>Document</title>
+</head>
+
+<body onload="" class="bg-info ">
+    <main id="maint" class="">
+        <div class="game-quiz-container">
+            <div class="game-details-container d-flex justify-content-between align-items-center mx-2">
+                <h1 id="time" class="rounded-circle bg-black text-light text-center p-2"></h1>
+                <h1 class="omg"><span id="question-number">0</span> / <span id="length">10</span> </h1>
+            </div>
+            <div id="display-question"></div>
+            <main class="text-center m-auto container ">
+
+                <div id="disQues" class="text-center border rounded-5 py-3 px-2 h2 fw-bold bg-dark text-white ">
+                    <h1 id="showqq"></h1>
+                </div>
+                <div class="d-flex flex-wrap mt-5 justify-content-center p-2 d-flex justify-content-between" id="opt">
+                </div>
+            </main>
+
+        </div>
+    </main>
+
+    <main id="kojo" class="text-center container-fluid ">
+        <h2 class="bg-light col-6 m-auto text-center my-2 rounded ">Scoreboard</h2>
+        <div>
+            <div id="score-display">Score: 0</div>
+        </div>
+        <div id="user"></div>
+    </main>
+    <main class="spin" id="spinner">
+        <h6 class="mb-5 fw-bold ">Loading Question</h6><br>
+        <div class="spinner mt-4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
+        authDomain: "isammy-k.firebaseapp.com",
+        projectId: "isammy-k",
+        storageBucket: "isammy-k.appspot.com",
+        messagingSenderId: "243915862365",
+        appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
+        measurementId: "G-70P28M0HYN"
+    };
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+</script>
+
+<script>
+    let showqq = document.getElementById("showqq")
+    // TIMER Function    
+    let time = document.getElementById("time")
+    let seconds = 10;
+    let interval;
+    let tete;
+    function count() {
+        tete = () => {
+            time.innerHTML = seconds;
+            time.innerHTML = (seconds < 10 ? "0" : " ") + seconds;
+            if (seconds < 10) {
+                time.style.backgroundColor = "red";
+            }
+            if (seconds <= 0) {
+                seconds = 10;
+                kojo.style.display = "block";
+                main.style.display = "none";
+                console.log(seconds);
+                clearInterval(interval);
+            }
+            seconds--;
+        };
+        interval = setInterval(tete, 1000);
+    }
+
+
+    let displayquestion = document.getElementById("display-question")
+    let option1 = document.getElementById("option-one-label")
+    let option2 = document.getElementById("option-two-label")
+    let option3 = document.getElementById("option-three-label")
+    let option4 = document.getElementById("option-four-label")
+    let disQues = document.getElementById("disQues")
+    let displayNum = document.getElementById("question-number")
+    let disLength = document.getElementById("length")
+    let showUsername = document.getElementById("user")
+    let main = document.getElementById("maint")
+    let kojo = document.getElementById("kojo")
+    let input = document.getElementById("mang")
+    let spinner = document.getElementById("spinner")
+    kojo.style.display = "none";
+
+
+    let currentindex = 0;
+    let pickedAns = [];
+    let score = 0;
+    let quizz = [];
+    let currentopt;
+    let currentAns;
+    let queLength;
+    let quiz;
+
+
+
+
+    setTimeout(() => {
+        main.style.display = "block"
+        spinner.style.display = "none"
+    }, 4000);
+
+
+
+
+
+    function shownxt() {
+        main.style.display = "block"
+        kojo.style.display = "none"
+    }
+
+
+
+
+
+    db.collection("151030").where("hasStarted", "==", true)
+    .onSnapshot((querySnapshot) => {
+        console.log(querySnapshot);
+        querySnapshot.forEach((el) => {
+            count()
+            shownxt()
+            console.log(el.data());
+            showqq.innerHTML = el.data().question
+            currentopt = el.data().options
+            currentAns = el.data().correctOption
+            num = el.data().index + 1;
+            console.log(num);
+            displayNum.innerHTML = num;
+            
+            // Clear previous options
+            opt.innerHTML = '';
+
+            // Add new options
+            for (let i = 0; i < currentopt.length; i++) {
+                opt.innerHTML += `
+<div class="mot mt-2 d-flex align-items-center rounded-2">
+    <span class="d-flex align-items-center text-center justify-content-center" id="boss" style="width: 100vw; height:100%;">
+        <label class="kill w-100 fw-bold text-white rounded-2">${currentopt[i]}
+            <input onchange="pickAns(event, ${i})" id="mang" value="${currentopt[i]}" name="maya" type="radio"/>
+        </label>
+    </span>
+</div>
+`;
+            }
+        })
+    });
+
+
+
+    let username;
+    let recieve = 0;
+    function showlb() {
+        admin = JSON.parse(localStorage.getItem('admin'));
+        console.log(admin);
+        showUsername.innerHTML = ""; // Clear the previous content before displaying new data
+        let nextQuesbtn = admin ? `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>` : '';
+        showUsername.innerHTML += nextQuesbtn;
+        db.collection("posts").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const username = data.username;
+                const score = data.score;
+                if (username) {
+                    const userHTML = `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
+          <p class="h5 fw-bold">${username}</p>
+          <p class="fs-3 fw-bold">${score}</p>
+        </div>
+        <br>`;
+                    showUsername.innerHTML += userHTML; // Append the HTML for each user
+                } else {
+                    console.log("Username is missing or empty:", username);
+                }
+            });
+        });
+    }
+
+    console.log(recieve);
+    showlb();
+
+
+
+
+    // // async function pickAns(ev, i) {
+    //     const optionInputs = document.querySelectorAll('input[name="maya"]');
+    //     for (const optionInput of optionInputs) {
+    //         optionInput.disabled = true;
+    //     }
+
+    //     let selected = ev.target.value;
+
+    //     if (currentAns === selected) {
+    //         recieve += 100;
+    //         console.log(recieve);
+    //         ev.target.parentElement.style.backgroundColor = "green";
+    //     } else {
+    //         ev.target.parentElement.style.backgroundColor = "red";
+    //         optionInputs.forEach((input) => {
+    //             if (input.value === currentAns) {
+    //                 input.parentElement.style.backgroundColor = "green";
+    //             }
+    //         });
+    //     }
+
+    //     if (username) {
+    //         showUsername.innerHTML = "";
+    //         showUsername.innerHTML += `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex;"> 
+    // <p class="h5 fw-bold"> ${username}</p>
+    // <p class="fs-3 fw-bold"> ${recieve}</p>
+    // </div>
+    // <br>`;
+    // let userid;
+    //     db.collection("posts").get().then((querySnapshot) => {
+    //         querySnapshot.forEach((doc) => {
+    //             console.log(doc.id, " => ", doc.data());
+    //             data = doc.data()
+    //             userid = data.username
+    //         });
+    //     });
+    //         console.log(userid);
+    //         if (userid) {
+    //             alert("tes")
+    //             // Save the data to Firestore immediately after the user clicks on an answer
+    //             db.collection("posts").doc(userid).set({
+    //                 score: 100,
+    //             })
+    //                 .then(() => {
+    //                     console.log("Data saved to Firestore:", recieve);
+    //                 })
+    //                 .catch((error) => {
+    //                     console.error("Error saving data to Firestore: ", error);
+    //                 });
+    //         }
+    //     }
+
+    // }
+
+
+    async function pickAns(ev, i) {
+        const optionInputs = document.querySelectorAll('input[name="maya"]');
+        for (const optionInput of optionInputs) {
+            optionInput.disabled = true;
+        }
+
+        let selected = ev.target.value;
+
+        if (currentAns === selected) {
+            recieve += 100;
+            console.log(recieve);
+            ev.target.parentElement.style.backgroundColor = "green";
+        } else {
+            ev.target.parentElement.style.backgroundColor = "red";
+            optionInputs.forEach((input) => {
+                if (input.value === currentAns) {
+                    input.parentElement.style.backgroundColor = "green";
+                }
+            });
+        }
+
+        alert("Test");
+        // Ensure that username is available
+        if (username) {
+            showUsername.innerHTML = "";
+            showUsername.innerHTML += `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex;"> 
+        <p class="h5 fw-bold"> ${username}</p>
+        <p class="fs-3 fw-bold"> ${recieve}</p>
+        </div>
+        <br>`;
+        }
+
+        // Retrieve the user ID
+        let userid;
+        await db.collection("posts").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                console.log(doc.id, " => ", doc.data());
+                data = doc.data()
+                userid = data.username
+            });
+        });
+        console.log(userid);
+
+        // Check if the user ID is available
+        if (userid) {
+            alert("Test");
+            // Save the data to Firestore immediately after the user clicks on an answer
+            db.collection("posts").doc(userid).set({
+                score: recieve,
+            })
+                .then(() => {
+                    console.log("Data saved to Firestore:", recieve);
+                })
+                .catch((error) => {
+                    console.error("Error saving data to Firestore: ", error);
+                });
+        }
+    }
+
+</script>

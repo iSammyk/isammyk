@@ -155,7 +155,7 @@ button:hover .play {
     console.log(coded.value);
 
    
-    db.collection("posts").doc().set({
+    db.collection("posts").doc(coded.value).set({
      username: coded.value,
      score: 0,
      gamepin: `${codee}`

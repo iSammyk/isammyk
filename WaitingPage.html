@@ -230,6 +230,7 @@
        // Store the generated code in localStorage
     // Initialize a counter variable
     let userCount = 0;
+    let currentIndex = 0;
 
     function looop() {
         // Retrieve data from Firestore after initializing Firebase
@@ -268,13 +269,12 @@
 
     
     async function fetchQue(){
-        var docRef = db.collection("just").doc("LA");
+        var docRef = db.collection("151030").doc(`id${currentIndex}`);
         docRef.get().then((doc) => {
             if (doc.exists) {
-                // console.log("Document data:", doc.data());
                 if(doc.data().hasStarted == true){
                     clearInterval(checker)
-                    window.location.href = "quiz.html"
+                    window.location.href = "client.html"
                 }
             } else {
                 // doc.data() will be undefined in this case
@@ -285,8 +285,10 @@
         });
     }
 
-    let checker = setInterval(()=>{
+     let checker = setInterval(()=>{
         fetchQue()
-    },100)
+     },100)
 
     </script>
+
+    
