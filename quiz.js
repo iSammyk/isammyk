@@ -621,9 +621,18 @@ function showQue() {
     console.log("Found quiz:", quiz);
     // disLength.innerHTML = quiz.questions.length;
     displayNum.innerHTML = quiz.index + 1;
-    // quiz.questions.forEach(el => {
-    //   console.log(el)
-    // let nek = el.question 
+    var docRef = db.collection("151030");
+    docRef.get().then((querySnapshot) => {
+    const numberOfDocs = querySnapshot.size;
+    console.log("Number of documents:", numberOfDocs);
+    if (numberOfDocs) {
+        disLength.innerHTML = numberOfDocs;
+    } else {
+        console.error("Element with ID 'docCount' not found.");
+    }
+    }).catch((error) => {
+            console.log("Error getting document:", error);
+    });
     currentAns = quiz.correctOption
     disQues.innerHTML = `<div>${quiz.question}</div>`
     opt.innerHTML = ""

@@ -21,7 +21,7 @@
         <div class="game-quiz-container">
             <div class="game-details-container d-flex justify-content-between align-items-center mx-2">
                 <h1 id="time" class="rounded-circle bg-black text-light text-center p-2"></h1>
-                <h1 class="omg"><span id="question-number">0</span> / <span id="length">10</span> </h1>
+                <h1 class="omg"><span id="question-number">0</span> / <span id="length"></span> </h1>
             </div>
             <div id="display-question"></div>
             <main class="text-center m-auto container ">
@@ -163,11 +163,22 @@
             num = el.data().index + 1;
             console.log(num);
             displayNum.innerHTML = num;
+            var docRef = db.collection("151030");
+            docRef.get().then((querySnapshot) => {
+            const numberOfDocs = querySnapshot.size;
+            // console.log("Number of documents:", numberOfDocs);
+            if (numberOfDocs) {
+                disLength.innerHTML = numberOfDocs;
+            } else {
+                console.error("Element with ID 'docCount' not found.");
+            }
+            }).catch((error) => {
+                    console.log("Error getting document:", error);
+            });
+
             
-            // Clear previous options
             opt.innerHTML = '';
 
-            // Add new options
             for (let i = 0; i < currentopt.length; i++) {
                 opt.innerHTML += `
 <div class="mot mt-2 d-flex align-items-center rounded-2">
@@ -182,6 +193,7 @@
         })
     });
 
+   
 
 
     let username;
@@ -189,7 +201,7 @@
     function showlb() {
         admin = JSON.parse(localStorage.getItem('admin'));
         console.log(admin);
-        showUsername.innerHTML = ""; // Clear the previous content before displaying new data
+        showUsername.innerHTML = ""; 
         let nextQuesbtn = admin ? `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>` : '';
         showUsername.innerHTML += nextQuesbtn;
         db.collection("posts").get().then((querySnapshot) => {
@@ -203,7 +215,7 @@
           <p class="fs-3 fw-bold">${score}</p>
         </div>
         <br>`;
-                    showUsername.innerHTML += userHTML; // Append the HTML for each user
+                    showUsername.innerHTML += userHTML; 
                 } else {
                     console.log("Username is missing or empty:", username);
                 }
@@ -293,7 +305,6 @@
             });
         }
 
-        alert("Test");
         // Ensure that username is available
         if (username) {
             showUsername.innerHTML = "";
@@ -317,7 +328,6 @@
 
         // Check if the user ID is available
         if (userid) {
-            alert("Test");
             // Save the data to Firestore immediately after the user clicks on an answer
             db.collection("posts").doc(userid).set({
                 score: recieve,
