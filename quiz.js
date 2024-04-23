@@ -883,6 +883,7 @@ function count() {
       seconds = 10;
       kojo.style.display = "block";
       main.style.display = "none";
+      showlb()
       // currentindex++;
       // console.log(currentindex);
       // console.log(seconds);

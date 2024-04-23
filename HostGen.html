@@ -282,8 +282,8 @@
             cont.innerHTML = "";
             userCount = 0;
             querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                const username = data.username;
+                const data = doc.id;
+                const username = data;
                 // Check if "username" exists and is not empty
                 if (username) {
                     // Increment the userCount and display it with the username

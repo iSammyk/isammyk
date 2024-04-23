@@ -21,7 +21,7 @@
         <div class="game-quiz-container">
             <div class="game-details-container d-flex justify-content-between align-items-center mx-2">
                 <h1 id="time" class="rounded-circle bg-black text-light text-center p-2"></h1>
-                <h1 class="omg"><span id="question-number">0</span> / <span id="length"></span> </h1>
+                <h1 class="omg"><span id="question-number">0</span> / <span id="length">0</span> </h1>
             </div>
             <div id="display-question"></div>
             <main class="text-center m-auto container ">
@@ -38,9 +38,6 @@
 
     <main id="kojo" class="text-center container-fluid ">
         <h2 class="bg-light col-6 m-auto text-center my-2 rounded ">Scoreboard</h2>
-        <div>
-            <div id="score-display">Score: 0</div>
-        </div>
         <div id="user"></div>
     </main>
     <main class="spin" id="spinner">
@@ -78,30 +75,7 @@
 </script>
 
 <script>
-    let showqq = document.getElementById("showqq")
-    // TIMER Function    
-    let time = document.getElementById("time")
-    let seconds = 10;
-    let interval;
-    let tete;
-    function count() {
-        tete = () => {
-            time.innerHTML = seconds;
-            time.innerHTML = (seconds < 10 ? "0" : " ") + seconds;
-            if (seconds < 10) {
-                time.style.backgroundColor = "red";
-            }
-            if (seconds <= 0) {
-                seconds = 10;
-                kojo.style.display = "block";
-                main.style.display = "none";
-                console.log(seconds);
-                clearInterval(interval);
-            }
-            seconds--;
-        };
-        interval = setInterval(tete, 1000);
-    }
+  
 
 
     let displayquestion = document.getElementById("display-question")
@@ -151,36 +125,36 @@
 
 
     db.collection("151030").where("hasStarted", "==", true)
-    .onSnapshot((querySnapshot) => {
-        console.log(querySnapshot);
-        querySnapshot.forEach((el) => {
-            count()
-            shownxt()
-            console.log(el.data());
-            showqq.innerHTML = el.data().question
-            currentopt = el.data().options
-            currentAns = el.data().correctOption
-            num = el.data().index + 1;
-            console.log(num);
-            displayNum.innerHTML = num;
-            var docRef = db.collection("151030");
-            docRef.get().then((querySnapshot) => {
-            const numberOfDocs = querySnapshot.size;
-            // console.log("Number of documents:", numberOfDocs);
-            if (numberOfDocs) {
-                disLength.innerHTML = numberOfDocs;
-            } else {
-                console.error("Element with ID 'docCount' not found.");
-            }
-            }).catch((error) => {
+        .onSnapshot((querySnapshot) => {
+            console.log(querySnapshot);
+            querySnapshot.forEach((el) => {
+                count()
+                shownxt()
+                console.log(el.data());
+                showqq.innerHTML = el.data().question
+                currentopt = el.data().options
+                currentAns = el.data().correctOption
+                num = el.data().index + 1;
+                console.log(num);
+                displayNum.innerHTML = num;
+                var docRef = db.collection("151030");
+                docRef.get().then((querySnapshot) => {
+                    const numberOfDocs = querySnapshot.size;
+                    // console.log("Number of documents:", numberOfDocs);
+                    if (numberOfDocs) {
+                        disLength.innerHTML = numberOfDocs;
+                    } else {
+                        console.error("Element with ID 'docCount' not found.");
+                    }
+                }).catch((error) => {
                     console.log("Error getting document:", error);
-            });
+                });
 
-            
-            opt.innerHTML = '';
 
-            for (let i = 0; i < currentopt.length; i++) {
-                opt.innerHTML += `
+                opt.innerHTML = '';
+
+                for (let i = 0; i < currentopt.length; i++) {
+                    opt.innerHTML += `
 <div class="mot mt-2 d-flex align-items-center rounded-2">
     <span class="d-flex align-items-center text-center justify-content-center" id="boss" style="width: 100vw; height:100%;">
         <label class="kill w-100 fw-bold text-white rounded-2">${currentopt[i]}
@@ -189,33 +163,30 @@
     </span>
 </div>
 `;
-            }
-        })
-    });
+                }
+            })
+        });
 
-   
+
 
 
     let username;
     let recieve = 0;
     function showlb() {
-        admin = JSON.parse(localStorage.getItem('admin'));
-        console.log(admin);
-        showUsername.innerHTML = ""; 
-        let nextQuesbtn = admin ? `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>` : '';
-        showUsername.innerHTML += nextQuesbtn;
+        showUsername.innerHTML = "";
         db.collection("posts").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
-                const username = data.username;
-                const score = data.score;
+                // console.log(doc.id, " => ", doc.data());
+                const username = doc.id;
+                const score = doc.data().score;
                 if (username) {
                     const userHTML = `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
           <p class="h5 fw-bold">${username}</p>
           <p class="fs-3 fw-bold">${score}</p>
         </div>
         <br>`;
-                    showUsername.innerHTML += userHTML; 
+                    showUsername.innerHTML += userHTML;
                 } else {
                     console.log("Username is missing or empty:", username);
                 }
@@ -225,7 +196,6 @@
 
     console.log(recieve);
     showlb();
-
 
 
 
@@ -284,7 +254,47 @@
     // }
 
 
+
+    let showqq = document.getElementById("showqq")
+    // TIMER Function    
+    let time = document.getElementById("time")
+    let seconds = 10;
+    let interval;
+    let tete;
+    let pscore = 100;
+    function count() {
+        tete = () => {
+            pscore -= 6
+            time.innerHTML = seconds;
+            time.innerHTML = (seconds < 10 ? "0" : " ") + seconds;
+            if (seconds < 10) {
+                time.style.backgroundColor = "red";
+            }
+            if (seconds <= 0) {
+                seconds = 10;
+                pscore = 100;
+                kojo.style.display = "block";
+                main.style.display = "none";
+                showlb()
+                console.log(seconds);
+                clearInterval(interval);
+            }
+            seconds--;
+            anotherFunction(pscore);
+        };
+        interval = setInterval(tete, 1000);
+    }
+
+    function anotherFunction(pscore) {
+    console.log("Updated pscore:", pscore);
+}
+
+
+
+
     async function pickAns(ev, i) {
+        anotherFunction(pscore);
+        console.log(pscore);
         const optionInputs = document.querySelectorAll('input[name="maya"]');
         for (const optionInput of optionInputs) {
             optionInput.disabled = true;
@@ -293,40 +303,8 @@
         let selected = ev.target.value;
 
         if (currentAns === selected) {
-            recieve += 100;
-            console.log(recieve);
-            ev.target.parentElement.style.backgroundColor = "green";
-        } else {
-            ev.target.parentElement.style.backgroundColor = "red";
-            optionInputs.forEach((input) => {
-                if (input.value === currentAns) {
-                    input.parentElement.style.backgroundColor = "green";
-                }
-            });
-        }
-
-        // Ensure that username is available
-        if (username) {
-            showUsername.innerHTML = "";
-            showUsername.innerHTML += `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex;"> 
-        <p class="h5 fw-bold"> ${username}</p>
-        <p class="fs-3 fw-bold"> ${recieve}</p>
-        </div>
-        <br>`;
-        }
-
-        // Retrieve the user ID
-        let userid;
-        await db.collection("posts").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
-                data = doc.data()
-                userid = data.username
-            });
-        });
-        console.log(userid);
-
-        // Check if the user ID is available
+            recieve += pscore;
+            let userid = JSON.parse(localStorage.getItem('username'))
         if (userid) {
             // Save the data to Firestore immediately after the user clicks on an answer
             db.collection("posts").doc(userid).set({
@@ -339,6 +317,29 @@
                     console.error("Error saving data to Firestore: ", error);
                 });
         }
+            console.log(recieve);
+            ev.target.parentElement.style.backgroundColor = "green";
+        } else {
+            ev.target.parentElement.style.backgroundColor = "red";
+            optionInputs.forEach((input) => {
+                if (input.value === currentAns) {
+                    input.parentElement.style.backgroundColor = "green";
+                }
+            });
+        }
+
+        
+        
+        // await db.collection("posts").get().then((querySnapshot) => {
+            //     querySnapshot.forEach((doc) => {
+                //          userid = doc.id;
+                //     });
+                // });
+                // console.log(userid);
+                
+                // Check if the user ID is available
+      
     }
+
 
 </script>

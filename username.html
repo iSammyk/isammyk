@@ -163,6 +163,7 @@ button:hover .play {
     .then(() => {
         console.log("Document successfully written!");
         window.location.href = "WaitingPage.html"
+        localStorage.setItem('username', JSON.stringify(coded.value))
     })
     .catch((error) => {
         console.error("Error writing document: ", error);
