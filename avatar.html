@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Avatar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7c80ad;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .gap {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gap img {
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gap img:hover {
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width: 600px) {
+            .gap img {
+                width: 80px; /* Adjust as needed for smaller screens */
+                height: 80px; /* Adjust as needed for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Choose an Avatar</h2>
+    <div class="gap">
+        <img src="./images/563.jpg" alt="" onclick="selectAvatar('./images/563.jpg')">
+        <img src="./images/man.jpg" alt="" onclick="selectAvatar('./images/man.jpg')">
+        <img src="./images/man3.jpg" alt="" onclick="selectAvatar('./images/man3.jpg')">
+        <img src="./images/new4.jpg" alt="" onclick="selectAvatar('./images/new4.jpg')">
+        <img src="./images/girl1.jpg" alt="" onclick="selectAvatar('./images/girl1.jpg')">
+        <img src="./images/new3.jpg" alt="" onclick="selectAvatar('./images/new3.jpg')">
+        <img src="./images/new2.jpg" alt="" onclick="selectAvatar('./images/new2.jpg')">
+        <img src="./images/new1.jpg" alt="" onclick="selectAvatar('./images/new1.jpg')">
+        <img src="./images/man2.jpg" alt="" onclick="selectAvatar('./images/man2.jpg')">
+        <img src="./images/girl3.jpg" alt="" onclick="selectAvatar('./images/girl3.jpg')">
+        <img src="./images/new5.jpg" alt="" onclick="selectAvatar('./images/new5.jpg')">
+    </div>
+
+    <script>
+        function selectAvatar(avatarSrc) {
+            localStorage.setItem('selectedAvatar', avatarSrc);
+            window.location.href = 'username.html'; 
+        }
+    </script>
+</body>
+</html>

@@ -122,9 +122,11 @@
 
 
 
+    let gamePin = JSON.parse(localStorage.getItem("userPin"))
+    let pin = gamePin.toString();
+    
 
-
-    db.collection("151030").where("hasStarted", "==", true)
+    db.collection(pin).where("hasStarted", "==", true)
         .onSnapshot((querySnapshot) => {
             console.log(querySnapshot);
             querySnapshot.forEach((el) => {
@@ -137,7 +139,7 @@
                 num = el.data().index + 1;
                 console.log(num);
                 displayNum.innerHTML = num;
-                var docRef = db.collection("151030");
+                var docRef = db.collection(pin);
                 docRef.get().then((querySnapshot) => {
                     const numberOfDocs = querySnapshot.size;
                     // console.log("Number of documents:", numberOfDocs);
@@ -171,87 +173,39 @@
 
 
     let username;
-    let recieve = 0;
+    
     function showlb() {
-        showUsername.innerHTML = "";
-        db.collection("posts").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                // console.log(doc.id, " => ", doc.data());
-                const username = doc.id;
-                const score = doc.data().score;
-                if (username) {
-                    const userHTML = `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
-          <p class="h5 fw-bold">${username}</p>
-          <p class="fs-3 fw-bold">${score}</p>
-        </div>
-        <br>`;
-                    showUsername.innerHTML += userHTML;
-                } else {
-                    console.log("Username is missing or empty:", username);
-                }
-            });
-        });
-    }
+    showUsername.innerHTML = "";
 
-    console.log(recieve);
+    db.collection("posts").where("gamepin", "==", pin).get()
+    .then((querySnapshot) => {
+        const players = [];
+        querySnapshot.forEach((doc) => {
+        const username = doc.id;
+        const score = doc.data().score;
+        players.push({ username, score });
+        console.log(players);
+        });
+
+        // Sort the players by score in descending order
+        players.sort((a, b) => b.score - a.score);
+
+        // Iterate over the sorted players array and display them with their ranks
+        players.forEach((player, index) => {
+            const rank = index + 1;
+            const userHTML = `
+                <div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
+                    <p class="h5 fw-bold">${rank}. ${player.username}</p>
+                    <p class="fs-3 fw-bold">${player.score}</p>
+                </div>
+                <br>`;
+            showUsername.innerHTML += userHTML;
+        });
+    });
+}
+
     showlb();
 
-
-
-    // // async function pickAns(ev, i) {
-    //     const optionInputs = document.querySelectorAll('input[name="maya"]');
-    //     for (const optionInput of optionInputs) {
-    //         optionInput.disabled = true;
-    //     }
-
-    //     let selected = ev.target.value;
-
-    //     if (currentAns === selected) {
-    //         recieve += 100;
-    //         console.log(recieve);
-    //         ev.target.parentElement.style.backgroundColor = "green";
-    //     } else {
-    //         ev.target.parentElement.style.backgroundColor = "red";
-    //         optionInputs.forEach((input) => {
-    //             if (input.value === currentAns) {
-    //                 input.parentElement.style.backgroundColor = "green";
-    //             }
-    //         });
-    //     }
-
-    //     if (username) {
-    //         showUsername.innerHTML = "";
-    //         showUsername.innerHTML += `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex;"> 
-    // <p class="h5 fw-bold"> ${username}</p>
-    // <p class="fs-3 fw-bold"> ${recieve}</p>
-    // </div>
-    // <br>`;
-    // let userid;
-    //     db.collection("posts").get().then((querySnapshot) => {
-    //         querySnapshot.forEach((doc) => {
-    //             console.log(doc.id, " => ", doc.data());
-    //             data = doc.data()
-    //             userid = data.username
-    //         });
-    //     });
-    //         console.log(userid);
-    //         if (userid) {
-    //             alert("tes")
-    //             // Save the data to Firestore immediately after the user clicks on an answer
-    //             db.collection("posts").doc(userid).set({
-    //                 score: 100,
-    //             })
-    //                 .then(() => {
-    //                     console.log("Data saved to Firestore:", recieve);
-    //                 })
-    //                 .catch((error) => {
-    //                     console.error("Error saving data to Firestore: ", error);
-    //                 });
-    //         }
-    //     }
-
-    // }
 
 
 
@@ -261,10 +215,11 @@
     let seconds = 10;
     let interval;
     let tete;
+    let recieve = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
     let pscore = 100;
     function count() {
         tete = () => {
-            pscore -= 6
+            pscore -= 8
             time.innerHTML = seconds;
             time.innerHTML = (seconds < 10 ? "0" : " ") + seconds;
             if (seconds < 10) {
@@ -304,11 +259,14 @@
 
         if (currentAns === selected) {
             recieve += pscore;
+            localStorage.setItem('score', recieve.toString()); 
             let userid = JSON.parse(localStorage.getItem('username'))
         if (userid) {
             // Save the data to Firestore immediately after the user clicks on an answer
             db.collection("posts").doc(userid).set({
+                username: userid,
                 score: recieve,
+                gamepin: pin
             })
                 .then(() => {
                     console.log("Data saved to Firestore:", recieve);
@@ -340,6 +298,31 @@
                 // Check if the user ID is available
       
     }
+
+
+    // Assuming `pin` contains the user's game pin
+
+// Function to listen for changes to the endGame flag
+function listenForEndGame() {
+  // Listen for real-time changes to the document corresponding to the user's game pin
+  db.collection(pin).doc(`id${currentindex}`).onSnapshot((doc) => {
+    if (doc.exists) {
+      const endGame = doc.data().endGame;
+      if (endGame === true) {
+        localStorage.removeItem('score')
+        localStorage.removeItem('username')
+        localStorage.removeItem('selectedAvatar')
+        localStorage.removeItem('userPin')
+        window.location.href = "input.html";
+      }
+    } else {
+      console.log("No such document!");
+    }
+  });
+}
+
+// Call the function to start listening for changes
+listenForEndGame();
 
 
 </script>

@@ -310,10 +310,10 @@
     let cont = document.getElementById("cont")
     let infos;
     let admin = true;
-    let code = 151030;
-    localStorage.setItem('userPin', JSON.stringify(code))
+    let code = 202030;
+    localStorage.setItem('admin', JSON.stringify(code))
     let pin;
-    let pinn = localStorage.getItem('userPin')
+    let pinn = localStorage.getItem('admin')
     pin = pinn.toString();
 
 
@@ -323,7 +323,15 @@
     let gamePin = pin;
     hero.textContent = gamePin;
 
-    
+
+    db.collection(pin).where("gamePin", "==", pin).get().then(async (querySnapshot) => {
+      querySnapshot.forEach(async (doc) => {
+        await doc.ref.update({
+          endGame: false
+        });
+        console.log("Document updated successfully");
+      });
+    });
 
     // Initialize a counter variable
     let userCount = 0;

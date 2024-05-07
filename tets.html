@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>User Profile</h1>
+        <div class="card my-3">
+            <div class="card-body">
+                <h5 class="card-title">Username: <span id="username"></span></h5>
+                <p class="card-text">Score: <span id="score"></span></p>
+                <img id="avatar" src="" alt="Avatar" class="img-fluid rounded-circle">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
+    authDomain: "isammy-k.firebaseapp.com",
+    projectId: "isammy-k",
+    storageBucket: "isammy-k.appspot.com",
+    messagingSenderId: "243915862365",
+    appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        function fetchUserInfo(Ricky) {
+    db.collection("posts").doc('Ricky').get()
+        .then((doc) => {
+            if (doc) {
+                alert("mmt")
+                const data = doc.data();
+                console.log(data);
+                document.getElementById("username").innerText = data.username;
+                document.getElementById("score").innerText = data.score;
+                document.getElementById("avatar").src = data.avatar || 'default-avatar.jpg'; // Default avatar image if not provided
+            } else {
+                console.log("No such document!");
+            }
+        })
+        .catch((error) => {
+            console.log("Error getting document:", error);
+        });
+}
+
+
+        // Fetch user information when the page loads
+        window.onload = function() {
+            const username = localStorage.getItem('username');
+            if (username) {
+                fetchUserInfo(username);
+            } else {
+                console.log("Username not found in local storage");
+            }
+        };
+    </script>
+</body>
+</html>

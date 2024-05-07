@@ -93,7 +93,7 @@ button:hover .play {
         <div class="w-100 mx-auto"><img src="isammyy-removebg-preview.png" alt="" style="width: 100%; height: 35vh;"></div>
         <div class="conatainer card mx-auto p-3" style="background-color: rgb(130, 120, 147);">
             <div class="input-wrapper my-3 w-100">
-                <input id="coded" type="text" placeholder="Game Pin" name="text" class="input">
+                <input id="coded" type="number" placeholder="Game Pin" name="text" class="input">
               </div>
             <button onclick="playy(event)">
                 <svg height="36px" width="36px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
@@ -141,49 +141,51 @@ button:hover .play {
 
 <script>
     let coded =  document.getElementById("coded")
-  let codee =  JSON.parse(localStorage.getItem("codee")); 
-    console.log(codee);
+//     let allQues
 
-    let allQues
+//     function load(){
+//     var collectionRef = db.collection(gamePinInput);
+//     collectionRef.get().then(function(querySnapshot) {
+//     querySnapshot.forEach(function(doc) {
+//       allQues = doc.data()
+//         console.log(doc.id, ' => ', doc.data());
+//     });
+// }).catch(function(error) {
+//     console.log("Error getting documents: ", error);
+// });
+//   }
+ // load()
 
-    function load(){
-      var docRef = db.collection("just").doc("151030");
-      docRef.get().then((doc) => {
-        if (doc.exists) {
-          alert("exists")
-            let quizzes = doc.data()
-            allQues = quizzes.mygamepin
-            console.log(allQues)
-          } else {
-            console.log("No such document!");
-          }
-        }).catch((error) => {
-          console.log("Error getting document:", error);
-        });
-        // Find the quiz associated with the entered game PIN
-        // const quiz = quizzes.find(quiz => quiz.gamePin === userPin);
-        // window.location.href = "username.html"
-      }
-    load()
-      
-    function playy(ev){
-      let userPin = coded.value.trim()
-      ev.preventDefault()
-      console.log(allQues)
-      const quiz = allQues.find(quiz => quiz.gamePin === userPin);
-      console.log(quiz);
-      if (quiz) {
-      console.log("Found quiz:", quiz);
-      localStorage.setItem("pin", JSON.stringify(userPin))
-      window.location.href = "username.html"
+    async function playy(ev) {
+    ev.preventDefault();
 
-      } else {
-      alert( `Quiz not found for ${userPin}`);
-      }
+    let userPin = coded.value.trim();
 
-      if (userPin === "" ) {
-          alert("input feild cannot be empty")        
-      }
+    if (userPin === "") {
+        alert("Input field cannot be empty");
+        return;
     }
+
+    try {
+        var collectionRef = db.collection(userPin);
+        let querySnapshot = await collectionRef.get();
+        let quiz = null;
+
+        querySnapshot.forEach(function (doc) {
+            quiz = doc.data();
+            console.log(doc.id, ' => ', doc.data());
+        });
+
+        if (quiz) {
+            console.log("Found quiz");
+            localStorage.setItem("userPin", userPin)
+            window.location.href = "avatar.html"
+        } else {
+            alert(`Quiz not found for ${userPin}`);
+        }
+    } catch (error) {
+        console.log("Error getting documents: ", error);
+    }
+}
 
 </script>

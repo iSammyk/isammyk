@@ -44,8 +44,7 @@ main.style.display = "none"
 
 
 
-let quiz1 =
-{
+let quiz1 = {
   gamePin: "151030",
   hasStarted: false,
   questions: [
@@ -53,6 +52,7 @@ let quiz1 =
       index: 0,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Which country has the longest coastline in the world?",
       options: ["USA", "Canada", "Ghana", "Nigeria"],
       correctOption: "Canada"
@@ -61,6 +61,7 @@ let quiz1 =
       index: 1,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "What is the capital of Malta?",
       options: ["London", "Korea", "Mayadiram", "Valetta"],
       correctOption: "Valetta"
@@ -69,6 +70,7 @@ let quiz1 =
       index: 2,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Which gas do plants absorb from the atmosphere during photosynthesis?",
       options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
       correctOption: "Carbon Dioxide"
@@ -77,6 +79,7 @@ let quiz1 =
       index: 3,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "In which US state would you find Harvard University?",
       options: ["Arizona", "Texas", "Califonia", "Massachusetts"],
       correctOption: "Massachusetts"
@@ -85,6 +88,7 @@ let quiz1 =
       index: 4,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Which three countries does Mexico share a land border with?",
       options: ["Japan,Italy and USA", "USA, Belize and Guatemala", "Nigeria, England and Guatemala", "Belgium,USA and Spain"],
       correctOption: "USA, Belize and Guatemala"
@@ -93,6 +97,7 @@ let quiz1 =
       index: 5,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Astana is the capital city of which country?",
       options: ["Tokyo", "Peru", "Tennesee", "Kazakhstan"],
       correctOption: "Kazakhstan"
@@ -101,6 +106,7 @@ let quiz1 =
       index: 6,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "What is the biggest island in the world?",
       options: ["lagos Island", "Greenland", "Germany", "Brussell"],
       correctOption: "Greenland"
@@ -109,6 +115,7 @@ let quiz1 =
       index: 7,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "What is the capital of Estonia?",
       options: ["Morroco", "Tallinn", "Andonna", "Angola"],
       correctOption: "Tallinn"
@@ -117,6 +124,7 @@ let quiz1 =
       index: 8,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Which city currently has the highest population in the world?",
       options: ["Spain", "Tokyo", "Peru", "Nigeria"],
       correctOption: "Tokyo"
@@ -125,6 +133,7 @@ let quiz1 =
       index: 9,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "How many large islands make up Hawaii?",
       options: ["Three", "Two", "Four", "Eight"],
       correctOption: "Eight"
@@ -133,6 +142,7 @@ let quiz1 =
       index: 10,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "What is the name of the microstate located between Spain and France?",
       options: ["Andorra", "Chicago", "Lima", "Ottawo"],
       correctOption: "Andorra"
@@ -141,6 +151,7 @@ let quiz1 =
       index: 11,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "What is the highest peak in Africa?",
       options: ["Mount Benjamin", "Oke Olumo", "Mount Kilimanjaro", "Mount Everest"],
       correctOption: "Mount Kilimanjaro"
@@ -149,6 +160,7 @@ let quiz1 =
       index: 12,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Which country has the most pyramids in the world?",
       options: ["Sudan", "China", "Qatar", "India"],
       correctOption: "Sudan"
@@ -157,6 +169,7 @@ let quiz1 =
       index: 13,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "In which US state would you find Fort Knox?",
       options: ["Kentucky", "nairobi", "Phoenix", "Buffalo"],
       correctOption: "Kentucky"
@@ -165,6 +178,7 @@ let quiz1 =
       index: 14,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Mount Vesuvius casts a shadow over which modern Italian city?",
       options: ["Bangladash", "Bugat", "Kendozi", "Naples"],
       correctOption: "Naples"
@@ -173,6 +187,7 @@ let quiz1 =
       index: 15,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "What is the largest desert in the world?",
       options: ["Kentra", "elect", "Ikorodu", "Antarctica"],
       correctOption: "Antarctica"
@@ -181,6 +196,7 @@ let quiz1 =
       index: 16,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "Which London Underground line is represented as green on the tube map?",
       options: ["Sctrach", "Station", "The District Line", "Brussels"],
       correctOption: "The District Line"
@@ -189,6 +205,7 @@ let quiz1 =
       index: 17,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "On the London Tube network, which is the only station to begin with the letter 'I'?",
       options: ["Ickenham", "Katkhanan", "Ijakumo", "Ukrania"],
       correctOption: "Ickenham",
@@ -197,6 +214,7 @@ let quiz1 =
       index: 18,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "In which European city would you find Manneken Pis – a statue of a small boy urinating into a fountain?",
       options: ["Spain", "TokBrussels", "Brussels", "Mercury"],
       correctOption: "Brussels"
@@ -205,6 +223,7 @@ let quiz1 =
       index: 19,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "In which city would you find La Sagrada Familia?",
       options: ["Barcelona", "Villareal", "Germany", "Real Madrid"],
       correctOption: "Barcelona"
@@ -213,272 +232,394 @@ let quiz1 =
       index: 20,
       gamePin: "151030",
       hasStarted: false,
+      endGame: false,
       question: "What is the highest mountain in Britain?",
       options: ["Kent", "Colchester", "The Seine", "Ben Nevis"],
       correctOption: "Ben Nevis"
+    }
+  ]
+};
+
+
+
+let quiz2 = {
+  gamePin: "202030",
+  hasStarted: false,
+  questions: [
+    {
+      index: 0,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the author of 'To Kill a Mockingbird'?",
+      options: ["John Steinbeck", "J.D. Salinger", "Harper Lee", "F. Scott Fitzgerald"],
+      correctOption: "Harper Lee"
     },
+    {
+      index: 1,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the chemical symbol for silver?",
+      options: ["Sv", "Ag", "Si", "Au"],
+      correctOption: "Ag"
+    },
+    {
+      index: 2,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "Which gas do plants absorb from the atmosphere during photosynthesis?",
+      options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+      correctOption: "Carbon Dioxide"
+    },
+    {
+      index: 3,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the capital of France?",
+      options: ["Berlin", "Madrid", "Rome", "Paris"],
+      correctOption: "Paris"
+    },
+    {
+      index: 4,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "How many teeth does an adult human have?",
+      options: ["28", "30", "32", "36"],
+      correctOption: "32"
+    },
+    {
+      index: 5,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the largest organ in the human body?",
+      options: ["Brain", "Heart", "Skin", "Liver"],
+      correctOption: "Skin"
+    },
+    {
+      index: 6,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "Which gas do plants release into the atmosphere during respiration?",
+      options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"],
+      correctOption: "Carbon Dioxide"
+    },
+    {
+      index: 7,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the author of 'The Great Gatsby'?",
+      options: ["Ernest Hemingway", "F. Scott Fitzgerald", "Mark Twain", "George Orwell"],
+      correctOption: "F. Scott Fitzgerald"
+    },
+    {
+      index: 8,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the largest desert in the world?",
+      options: ["Sahara Desert", "Gobi Desert", "Atacama Desert", "Arctic Desert"],
+      correctOption: "Sahara Desert"
+    },
+    {
+      index: 9,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "In which country is the Taj Mahal located?",
+      options: ["India", "Egypt", "Turkey", "China"],
+      correctOption: "India"
+    },
+    {
+      index: 10,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the chemical symbol for gold?",
+      options: ["Go", "Gd", "Au", "Ag"],
+      correctOption: "Au"
+    },
+    {
+      index: 11,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the largest planet in our solar system?",
+      options: ["Earth", "Mars", "Jupiter", "Saturn"],
+      correctOption: "Jupiter"
+    },
+    {
+      index: 12,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "Which gas is responsible for the green color of leaves?",
+      options: ["Oxygen", "Carbon Dioxide", "Chlorophyll", "Nitrogen"],
+      correctOption: "Chlorophyll"
+    },
+    {
+      index: 13,
+      gamePin: "202030",
+      hasStarted: false,
+      endGame: false,
+      question: "Who wrote 'Pride and Prejudice'?",
+      options: ["Emily Bronte", "Jane Austen", "Charlotte Bronte", "Leo Tolstoy"],
+      correctOption: "Jane Austen"
+    }
+  ]
+};
 
-  ],
-
-}
-let quiz2 = [
-  {
-    gamePin: "202030",
-    hasStarted: false,
-    questions: [
-      {
-        index: 0,
-        question: "Who is the author of 'To Kill a Mockingbird'?",
-        options: ["John Steinbeck", "J.D. Salinger", "Harper Lee", "F. Scott Fitzgerald"],
-        correctOption: "Harper Lee"
-      },
-      {
-        index: 1,
-        question: "What is the chemical symbol for silver?",
-        options: ["Sv", "Ag", "Si", "Au"],
-        correctOption: "Ag"
-      },
-      {
-        index: 2,
-        question: "Which gas do plants absorb from the atmosphere during photosynthesis?",
-        options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-        correctOption: "Carbon Dioxide"
-      },
-      {
-        index: 3,
-        question: "What is the capital of France?",
-        options: ["Berlin", "Madrid", "Rome", "Paris"],
-        correctOption: "Paris"
-      },
-      {
-        index: 4,
-        question: "How many teeth does an adult human have?",
-        options: ["28", "30", "32", "36"],
-        correctOption: "32"
-      },
-      {
-        index: 5,
-        question: "What is the largest organ in the human body?",
-        options: ["Brain", "Heart", "Skin", "Liver"],
-        correctOption: "Skin"
-      },
-      {
-        index: 6,
-        question: "Which gas do plants release into the atmosphere during respiration?",
-        options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Methane"],
-        correctOption: "Carbon Dioxide"
-      },
-      {
-        index: 7,
-        question: "Who is the author of 'The Great Gatsby'?",
-        options: ["Ernest Hemingway", "F. Scott Fitzgerald", "Mark Twain", "George Orwell"],
-        correctOption: "F. Scott Fitzgerald"
-      },
-      {
-        index: 8,
-        question: "What is the largest desert in the world?",
-        options: ["Sahara Desert", "Gobi Desert", "Atacama Desert", "Arctic Desert"],
-        correctOption: "Sahara Desert"
-      },
-      {
-        index: 9,
-        question: "In which country is the Taj Mahal located?",
-        options: ["India", "Egypt", "Turkey", "China"],
-        correctOption: "India"
-      },
-      {
-        index: 10,
-        question: "What is the chemical symbol for gold?",
-        options: ["Go", "Gd", "Au", "Ag"],
-        correctOption: "Au"
-      },
-      {
-        index: 11,
-        question: "What is the largest planet in our solar system?",
-        options: ["Earth", "Mars", "Jupiter", "Saturn"],
-        correctOption: "Jupiter"
-      },
-      {
-        index: 12,
-        question: "Which gas is responsible for the green color of leaves?",
-        options: ["Oxygen", "Carbon Dioxide", "Chlorophyll", "Nitrogen"],
-        correctOption: "Chlorophyll"
-      },
-      {
-        index: 13,
-        question: "Who wrote 'Pride and Prejudice'?",
-        options: ["Emily Bronte", "Jane Austen", "Charlotte Bronte", "Leo Tolstoy"],
-        correctOption: "Jane Austen"
-      }
-    ]
 
 
-  }
-]
-let quiz3 = [
-  {
-    gamePin: "199033",
-    hasStarted: false,
-    questions: [
-      {
-        index: 0,
-        question: "What is the capital of France?",
-        options: ["Berlin", "Madrid", "Rome", "Paris"],
-        correctOption: "Paris"
-      },
-      {
-        index: 1,
-        question: "Who is the current President of the United States?",
-        options: ["Barack Obama", "Joe Biden", "Donald Trump", "George W. Bush"],
-        correctOption: "Joe Biden"
-      },
-      {
-        index: 2,
-        question: "Which country recently won the UEFA European Championship in football (Euro 2020)?",
-        options: ["France", "Germany", "Portugal", "Italy"],
-        correctOption: "Italy"
-      },
-      {
-        index: 3,
-        question: "What is the largest social media platform in the world?",
-        options: ["Twitter", "Instagram", "Facebook", "Snapchat"],
-        correctOption: "Facebook"
-      },
-      {
-        index: 4,
-        question: "Which country hosted the 2020 Summer Olympics?",
-        options: ["United States", "China", "Brazil", "Japan"],
-        correctOption: "Japan"
-      },
-      {
-        index: 5,
-        question: "Who won the Nobel Prize in Physics in 2020 for their work on black holes?",
-        options: ["Albert Einstein", "Stephen Hawking", "Roger Penrose", "Isaac Newton"],
-        correctOption: "Roger Penrose"
-      },
-      {
-        index: 6,
-        question: "Which company became the world's most valuable publicly traded company in 2021?",
-        options: ["Apple", "Amazon", "Microsoft", "Google"],
-        correctOption: "Apple"
-      },
-      {
-        index: 7,
-        question: "In 2021, which spacecraft successfully landed on Mars and began exploring the planet?",
-        options: ["Voyager 1", "Hubble Space Telescope", "Mars Rover Perseverance", "New Horizons"],
-        correctOption: "Mars Rover Perseverance"
-      },
-      {
-        index: 8,
-        question: "Which country launched the first-ever crewed mission to the International Space Station (ISS) in 2020?",
-        options: ["Russia", "United States", "China", "India"],
-        correctOption: "China"
-      },
-      {
-        index: 9,
-        question: "In 2021, which cryptocurrency gained widespread attention and reached record-high prices?",
-        options: ["Ethereum", "Ripple (XRP)", "Litecoin", "Bitcoin"],
-        correctOption: "Bitcoin"
-      },
-      {
-        index: 10,
-        question: "Who won the FIFA World Cup in 2018?",
-        options: ["France", "Germany", "Brazil", "Belgium"],
-        correctOption: "France"
-      },
-      {
-        index: 11,
-        question: "Which country recently became the first to launch a digital currency issued by its central bank?",
-        options: ["United States", "China", "European Union", "Japan"],
-        correctOption: "China"
-      },
-      {
-        index: 12,
-        question: "In 2021, which global event was postponed to 2021 due to the COVID-19 pandemic?",
-        options: ["Summer Olympics", "FIFA World Cup", "UEFA European Championship", "Winter Olympics"],
-        correctOption: "Summer Olympics"
-      },
-      {
-        index: 13,
-        question: "Who is the current Prime Minister of the United Kingdom?",
-        options: ["David Cameron", "Theresa May", "Boris Johnson", "Tony Blair"],
-        correctOption: "Boris Johnson"
-      },
-      {
-        index: 14,
-        question: "Which country recently signed the Abraham Accords, normalizing diplomatic relations with Israel?",
-        options: ["Saudi Arabia", "Egypt", "United Arab Emirates", "Iran"],
-        correctOption: "United Arab Emirates"
-      },
-      {
-        index: 15,
-        question: "In 2021, which tech billionaire became the world's richest person?",
-        options: ["Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg"],
-        correctOption: "Elon Musk"
-      },
-      {
-        index: 16,
-        question: "Which country experienced a major outbreak of wildfires in 2020, leading to widespread destruction and loss of wildlife?",
-        options: ["Australia", "Brazil", "Canada", "Russia"],
-        correctOption: "Australia"
-      },
-      {
-        index: 17,
-        question: "Who is the current Secretary-General of the United Nations?",
-        options: ["Ban Ki-moon", "Kofi Annan", "António Guterres", "Ban Ki-moon"],
-        correctOption: "António Guterres"
-      },
-      {
-        index: 18,
-        question: "Which country recently launched the Chang'e-5 mission, successfully bringing lunar samples back to Earth?",
-        options: ["Russia", "United States", "China", "India"],
-        correctOption: "China"
-      },
-      {
-        index: 19,
-        question: "In 2020, which country was the first to approve a COVID-19 vaccine for public use?",
-        options: ["United States", "Russia", "China", "United Kingdom"],
-        correctOption: "Russia"
-      },
-      {
-        index: 20,
-        question: "Who won the Nobel Prize in Literature in 2020 for her novel 'The Testaments'?",
-        options: ["Haruki Murakami", "Margaret Atwood", "J.K. Rowling", "Salman Rushdie"],
-        correctOption: "Margaret Atwood"
-      },
-      {
-        index: 21,
-        question: "Which social justice movement gained prominence in 2020, advocating for racial equality and justice?",
-        options: ["Me Too Movement", "Black Lives Matter", "March for Our Lives", "Climate Strike"],
-        correctOption: "Black Lives Matter"
-      },
-      {
-        index: 22,
-        question: "Which European country faced a debt crisis and financial turmoil in recent years, leading to bailout programs?",
-        options: ["Italy", "France", "Greece", "Spain"],
-        correctOption: "Greece"
-      },
-      {
-        index: 23,
-        question: "In 2020, which environmental activist was named TIME magazine's Person of the Year?",
-        options: ["Greta Thunberg", "Al Gore", "David Attenborough", "Jane Goodall"],
-        correctOption: "Greta Thunberg"
-      },
-      {
-        index: 24,
-        question: "Which country recently experienced a major earthquake and tsunami, causing widespread destruction?",
-        options: ["Indonesia", "Japan", "Mexico", "New Zealand"],
-        correctOption: "Indonesia"
-      },
-      {
-        index: 25,
-        question: "Who is the current Chancellor of Germany?",
-        options: ["Angela Merkel", "Gerhard Schröder", "Helmut Kohl", "Olaf Scholz"],
-        correctOption: "Olaf Scholz"
-      }
-    ],
-  }
-]
+let quiz3 = {
+  gamePin: "199033",
+  hasStarted: false,
+  questions: [
+    {
+      index: 0,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the capital of France?",
+      options: ["Berlin", "Madrid", "Rome", "Paris"],
+      correctOption: "Paris"
+    },
+    {
+      index: 1,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the current President of the United States?",
+      options: ["Barack Obama", "Joe Biden", "Donald Trump", "George W. Bush"],
+      correctOption: "Joe Biden"
+    },
+    {
+      index: 2,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country recently won the UEFA European Championship in football (Euro 2020)?",
+      options: ["France", "Germany", "Portugal", "Italy"],
+      correctOption: "Italy"
+    },
+    {
+      index: 3,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the largest social media platform in the world?",
+      options: ["Twitter", "Instagram", "Facebook", "Snapchat"],
+      correctOption: "Facebook"
+    },
+    {
+      index: 4,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country hosted the 2020 Summer Olympics?",
+      options: ["United States", "China", "Brazil", "Japan"],
+      correctOption: "Japan"
+    },
+    {
+      index: 5,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Who won the Nobel Prize in Physics in 2020 for their work on black holes?",
+      options: ["Albert Einstein", "Stephen Hawking", "Roger Penrose", "Isaac Newton"],
+      correctOption: "Roger Penrose"
+    },
+    {
+      index: 6,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which company became the world's most valuable publicly traded company in 2021?",
+      options: ["Apple", "Amazon", "Microsoft", "Google"],
+      correctOption: "Apple"
+    },
+    {
+      index: 7,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "In 2021, which spacecraft successfully landed on Mars and began exploring the planet?",
+      options: ["Voyager 1", "Hubble Space Telescope", "Mars Rover Perseverance", "New Horizons"],
+      correctOption: "Mars Rover Perseverance"
+    },
+    {
+      index: 8,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country launched the first-ever crewed mission to the International Space Station (ISS) in 2020?",
+      options: ["Russia", "United States", "China", "India"],
+      correctOption: "China"
+    },
+    {
+      index: 9,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "In 2021, which cryptocurrency gained widespread attention and reached record-high prices?",
+      options: ["Ethereum", "Ripple (XRP)", "Litecoin", "Bitcoin"],
+      correctOption: "Bitcoin"
+    },
+    {
+      index: 10,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Who won the FIFA World Cup in 2018?",
+      options: ["France", "Germany", "Brazil", "Belgium"],
+      correctOption: "France"
+    },
+    {
+      index: 11,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country recently became the first to launch a digital currency issued by its central bank?",
+      options: ["United States", "China", "European Union", "Japan"],
+      correctOption: "China"
+    },
+    {
+      index: 12,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "In 2021, which global event was postponed to 2021 due to the COVID-19 pandemic?",
+      options: ["Summer Olympics", "FIFA World Cup", "UEFA European Championship", "Winter Olympics"],
+      correctOption: "Summer Olympics"
+    },
+    {
+      index: 13,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the current Prime Minister of the United Kingdom?",
+      options: ["David Cameron", "Theresa May", "Boris Johnson", "Tony Blair"],
+      correctOption: "Boris Johnson"
+    },
+    {
+      index: 14,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country recently signed the Abraham Accords, normalizing diplomatic relations with Israel?",
+      options: ["Saudi Arabia", "Egypt", "United Arab Emirates", "Iran"],
+      correctOption: "United Arab Emirates"
+    },
+    {
+      index: 15,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "In 2021, which tech billionaire became the world's richest person?",
+      options: ["Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg"],
+      correctOption: "Elon Musk"
+    },
+    {
+      index: 16,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country experienced a major outbreak of wildfires in 2020, leading to widespread destruction and loss of wildlife?",
+      options: ["Australia", "Brazil", "Canada", "Russia"],
+      correctOption: "Australia"
+    },
+    {
+      index: 17,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the current Secretary-General of the United Nations?",
+      options: ["Ban Ki-moon", "Kofi Annan", "António Guterres", "Ban Ki-moon"],
+      correctOption: "António Guterres"
+    },
+    {
+      index: 18,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country recently launched the Chang'e-5 mission, successfully bringing lunar samples back to Earth?",
+      options: ["Russia", "United States", "China", "India"],
+      correctOption: "China"
+    },
+    {
+      index: 19,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "In 2020, which country was the first to approve a COVID-19 vaccine for public use?",
+      options: ["United States", "Russia", "China", "United Kingdom"],
+      correctOption: "Russia"
+    },
+    {
+      index: 20,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Who won the Nobel Prize in Literature in 2020 for her novel 'The Testaments'?",
+      options: ["Haruki Murakami", "Margaret Atwood", "J.K. Rowling", "Salman Rushdie"],
+      correctOption: "Margaret Atwood"
+    },
+    {
+      index: 21,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which social justice movement gained prominence in 2020, advocating for racial equality and justice?",
+      options: ["Me Too Movement", "Black Lives Matter", "March for Our Lives", "Climate Strike"],
+      correctOption: "Black Lives Matter"
+    },
+    {
+      index: 22,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which European country faced a debt crisis and financial turmoil in recent years, leading to bailout programs?",
+      options: ["Italy", "France", "Greece", "Spain"],
+      correctOption: "Greece"
+    },
+    {
+      index: 23,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "In 2020, which environmental activist was named TIME magazine's Person of the Year?",
+      options: ["Greta Thunberg", "Al Gore", "David Attenborough", "Jane Goodall"],
+      correctOption: "Greta Thunberg"
+    },
+    {
+      index: 24,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Which country recently experienced a major earthquake and tsunami, causing widespread destruction?",
+      options: ["Indonesia", "Japan", "Mexico", "New Zealand"],
+      correctOption: "Indonesia"
+    },
+    {
+      index: 25,
+      gamePin: "199033",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the current Chancellor of Germany?",
+      options: ["Angela Merkel", "Gerhard Schröder", "Helmut Kohl", "Olaf Scholz"],
+      correctOption: "Olaf Scholz"
+    }
+  ]
+};
+
+
+
 
 
 let knot = document.querySelector(".game-quiz-container");
@@ -496,8 +637,8 @@ let seconds = 10;
 kojo.style.display = "none"
 
 // function setIt() {
-//   quiz1.questions.forEach((el, i) => {
-//     db.collection("151030").doc(`id${i}`).set(el)
+//   quiz2.questions.forEach((el, i) => {
+//     db.collection("202030").doc(`id${i}`).set(el)
 //       .then(() => {
 //         console.log("Document successfully written!");
 //       })
@@ -541,12 +682,12 @@ kojo.style.display = "none"
 //   console.error("Error writing document: ", error);
 // });
 
-let gamePin = JSON.parse(localStorage.getItem("pin"))
-console.log(gamePin);
+let gamePin = JSON.parse(localStorage.getItem("userPin"))
+let pin = gamePin.toString();
+console.log(pin);
 async function getQue() {
-  // var allGame = await db.collection("just");
   console.log("Hey");
-  db.collection("151030").where("hasStarted", "==", true).where("index", "==", currentindex)
+  db.collection(pin).where("hasStarted", "==", true).where("index", "==", currentindex)
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -587,7 +728,7 @@ getQue();
 let maya;
 async function fetchQue() {
   quizz = [];
-  await db.collection("151030").where("hasStarted", "==", true).where("index", "==", currentindex)
+  await db.collection(pin).where("hasStarted", "==", true).where("index", "==", currentindex)
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -621,7 +762,7 @@ function showQue() {
     console.log("Found quiz:", quiz);
     // disLength.innerHTML = quiz.questions.length;
     displayNum.innerHTML = quiz.index + 1;
-    var docRef = db.collection("151030");
+    var docRef = db.collection(pin);
     docRef.get().then((querySnapshot) => {
     const numberOfDocs = querySnapshot.size;
     console.log("Number of documents:", numberOfDocs);
@@ -659,28 +800,41 @@ function showQue() {
 let username;
 let recieve = 0;
 function showlb() {
-  admin = JSON.parse(localStorage.getItem('admin'));
-  console.log(admin);
-  showUsername.innerHTML = ""; // Clear the previous content before displaying new data
-  let nextQuesbtn = admin ? `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>` : '';
-  showUsername.innerHTML += nextQuesbtn;
-  db.collection("posts").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      console.log(doc.id, " => ", doc.data());
-      const username = doc.id;
-      const score = doc.data().score;
-      if (username) {
-        const userHTML = `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
-          <p class="h5 fw-bold">${username}</p>
-          <p class="fs-3 fw-bold">${score}</p>
-        </div>
-        <br>`;
-        showUsername.innerHTML += userHTML; // Append the HTML for each user
-      } else {
-        console.log("Username is missing or empty:", username);
-      }
-    });
+  var docRef = db.collection(pin);
+  docRef.get().then((querySnapshot) => {
+  const numberOfDocs = querySnapshot.size;
+  console.log("Number of documents:", numberOfDocs);
+
+  }).catch((error) => {
+      console.log(error);
+  });
+  showUsername.innerHTML = "";
+  let nextQuesbtn = `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>`;
+  let endgame = `<button class="btn btn-danger my-2" onclick="endd()"><span> END QUIZ</span></button>`
+  showUsername.innerHTML +=  currentindex >= 1  ? endgame : nextQuesbtn;
+    db.collection("posts").where("gamepin", "==", pin).get()
+    .then((querySnapshot) => {
+        const players = [];
+        querySnapshot.forEach((doc) => {
+        const username = doc.id;
+        const score = doc.data().score;
+        players.push({ username, score });
+        console.log(players);
+        });
+      // Sort the players by score in descending order
+      players.sort((a, b) => b.score - a.score);
+
+      // Iterate over the sorted players array and display them with their ranks
+      players.forEach((player, index) => {
+          const rank = index + 1;
+          const userHTML = `
+              <div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
+                  <p class="h5 fw-bold">${rank}. ${player.username}</p>
+                  <p class="fs-3 fw-bold">${player.score}</p>
+              </div>
+              <br>`;
+          showUsername.innerHTML += userHTML;
+      });
   });
 }
 
@@ -688,59 +842,98 @@ console.log(recieve);
 showlb();
 let userid;
 
+async function endd(){
+  try {
 
 
-async function pickAns(ev, i) {
-  db.collection("posts").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data());
-      data = doc.data()
-      userid = data.username
+    await db.collection(pin).doc(`id${currentindex}`).update({
+      hasStarted: false
     });
-  });
-  const optionInputs = document.querySelectorAll('input[name="maya"]');
-  for (const optionInput of optionInputs) {
-    optionInput.disabled = true;
-  }
 
-  let selected = ev.target.value;
+    const querySnapshot = await db.collection("posts").where("gamepin", "==", pin).get();
 
-  if (currentAns === selected) {
-    recieve += 100;
-    ev.target.parentElement.style.backgroundColor = "green";
-  } else {
-    ev.target.parentElement.style.backgroundColor = "red";
-    // Highlight the correct answer
-    optionInputs.forEach((input) => {
-      if (input.value === currentAns) {
-        input.parentElement.style.backgroundColor = "green";
+    querySnapshot.forEach(async (doc) => {
+
+      try {
+        await doc.ref.delete();
+        console.log("Document deleted successfully");
+ 
+        window.location.href = "create.html";
+      } catch (error) {
+        console.error("Error deleting document:", error);
       }
     });
-  }
 
-  if (username) {
-    showUsername.innerHTML = "";
-    showUsername.innerHTML += `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex;"> 
-    <p class="h5 fw-bold"> ${username}</p>
-    <p class="fs-3 fw-bold"> ${recieve}</p>
-    </div>
-    <br>`;
-
-    if (userid) {
-      // Save the data to Firestore immediately after the user clicks on an answer
-      db.collection("users").doc(userid).set({
-        score: recieve,
-      })
-        .then(() => {
-          console.log("Data saved to Firestore:", recieve);
-        })
-        .catch((error) => {
-          console.error("Error saving data to Firestore: ", error);
+    await db.collection(pin).where("gamePin", "==", pin).get().then(async (querySnapshot) => {
+      querySnapshot.forEach(async (doc) => {
+        await doc.ref.update({
+          endGame: true
         });
-    }
-  }
+        console.log("Document updated successfully");
+      });
+    });
 
+  } catch (error) {
+    console.error("Error updating document:", error);
+    // Handle error
+  }
+  localStorage.removeItem('score')
+  localStorage.removeItem('userPin')
+  
 }
+
+
+// async function pickAns(ev, i) {
+//   db.collection("posts").get().then((querySnapshot) => {
+//     querySnapshot.forEach((doc) => {
+//       console.log(doc.id, " => ", doc.data());
+//       data = doc.data()
+//       userid = data.username
+//     });
+//   });
+//   const optionInputs = document.querySelectorAll('input[name="maya"]');
+//   for (const optionInput of optionInputs) {
+//     optionInput.disabled = true;
+//   }
+
+//   let selected = ev.target.value;
+
+//   if (currentAns === selected) {
+//     recieve += 100;
+//     ev.target.parentElement.style.backgroundColor = "green";
+//   } else {
+//     ev.target.parentElement.style.backgroundColor = "red";
+//     // Highlight the correct answer
+//     optionInputs.forEach((input) => {
+//       if (input.value === currentAns) {
+//         input.parentElement.style.backgroundColor = "green";
+//       }
+//     });
+//   }
+
+//   if (username) {
+//     showUsername.innerHTML = "";
+//     showUsername.innerHTML += `<div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex;"> 
+//     <p class="h5 fw-bold"> ${username}</p>
+//     <p class="fs-3 fw-bold"> ${recieve}</p>
+//     </div>
+//     <br>`;
+
+//     if (userid) {
+//       // Save the data to Firestore immediately after the user clicks on an answer
+//       db.collection("users").doc(userid).set({
+//         score: recieve,
+//       })
+//         .then(() => {
+//           console.log("Data saved to Firestore:", recieve);
+//         })
+//         .catch((error) => {
+//           console.error("Error saving data to Firestore: ", error);
+//         });
+//     }
+//   }
+
+// }
 
 
 // console.log(userid); 
@@ -748,7 +941,7 @@ async function pickAns(ev, i) {
 // async function net() {
 //   currentindex++
 //   console.log(currentindex);
-//   var washingtonRef = await db.collection("151030").doc(`id${currentindex}`);
+//   var washingtonRef = await db.collection(pin).doc(`id${currentindex}`);
 //   console.log(washingtonRef);
 
 //   // Set the "capital" field of the city 'DC'
@@ -758,7 +951,7 @@ async function pickAns(ev, i) {
 //     .then(async () => {
 //       // console.log("Document successfully updated!");
 //       // alert("Updated")
-//       db.collection("151030").where("index", "==", currentindex)
+//       db.collection(pin).where("index", "==", currentindex)
 //         .get()
 //         .then((querySnapshot) => {
 //           querySnapshot.forEach((doc) => {
@@ -798,13 +991,13 @@ async function pickAns(ev, i) {
 
 
 async function net() {
-  await db.collection("151030").doc(`id${currentindex}`).update({
+  await db.collection(pin).doc(`id${currentindex}`).update({
     hasStarted: false
   });
   currentindex++;
   console.log(currentindex);
   try {
-    await db.collection("151030").doc(`id${currentindex}`).update({
+    await db.collection(pin).doc(`id${currentindex}`).update({
       hasStarted: true
     });
     console.log(currentindex);
@@ -821,7 +1014,7 @@ async function net() {
 }
 
 // function nextplayers() {
-//   var docRef = db.collection("151030").doc(`id${currentindex}`);
+//   var docRef = db.collection(pin).doc(`id${currentindex}`);
 //   docRef.get().then((doc) => {
 //     if (doc.exists && doc.data().hasStarted === true) {
 //       const question = doc.data().question;

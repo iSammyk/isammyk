@@ -142,6 +142,7 @@ button:hover .play {
     let coded =  document.getElementById("coded")
     // console.log(codee);
     function playy(){
+      const selectedAvatarSrc = localStorage.getItem('selectedAvatar');
         if (coded.value == ""){
             alert("Input feild cannot be empty")
         }
@@ -150,7 +151,7 @@ button:hover .play {
 
         }
     
-    let codee =  JSON.parse(localStorage.getItem("codee")); 
+    let codee =  JSON.parse(localStorage.getItem("userPin")); 
     console.log(codee)
     console.log(coded.value);
 
@@ -158,7 +159,8 @@ button:hover .play {
     db.collection("posts").doc(coded.value).set({
      username: coded.value,
      score: 0,
-     gamepin: `${codee}`
+     gamepin: codee,
+     avatar: selectedAvatarSrc
     })
     .then(() => {
         console.log("Document successfully written!");
