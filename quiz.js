@@ -811,8 +811,8 @@ function showlb() {
   showUsername.innerHTML = "";
   let nextQuesbtn = `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>`;
   let endgame = `<button class="btn btn-danger my-2" onclick="endd()"><span> END QUIZ</span></button>`
-  showUsername.innerHTML +=  currentindex >= 1  ? endgame : nextQuesbtn;
-    db.collection("posts").where("gamepin", "==", pin).get()
+  showUsername.innerHTML +=  currentindex <= 1  ? endgame : nextQuesbtn;
+    db.collection("posts").where("gamepin", "==", parseInt(pin)).get()
     .then((querySnapshot) => {
         const players = [];
         querySnapshot.forEach((doc) => {
@@ -842,45 +842,46 @@ console.log(recieve);
 showlb();
 let userid;
 
-async function endd(){
+async function endd() {
   try {
+    const querySnapshot = await db.collection("posts").where("gamepin", "==",parseInt(pin)).get();
+    console.log(parseInt(pin));
+    
+    // Array to store promises
+    const deletePromises = [];
 
+    querySnapshot.forEach((doc) => {
+      // Add each delete operation to the array
+      deletePromises.push(doc.ref.delete());
+    });
+
+    // Wait for all delete operations to complete
+    await Promise.all(deletePromises);
 
     await db.collection(pin).doc(`id${currentindex}`).update({
       hasStarted: false
     });
 
-    const querySnapshot = await db.collection("posts").where("gamepin", "==", pin).get();
+    console.log("donee");
 
-    querySnapshot.forEach(async (doc) => {
-
-      try {
-        await doc.ref.delete();
-        console.log("Document deleted successfully");
- 
-        window.location.href = "create.html";
-      } catch (error) {
-        console.error("Error deleting document:", error);
-      }
+    var washingtonRefs = db.collection(pin.toString()).doc(`id${currentindex}`);
+    await washingtonRefs.update({
+      endGame: true,
     });
 
-    await db.collection(pin).where("gamePin", "==", pin).get().then(async (querySnapshot) => {
-      querySnapshot.forEach(async (doc) => {
-        await doc.ref.update({
-          endGame: true
-        });
-        console.log("Document updated successfully");
-      });
-    });
+    console.log("Document successfully updated!");
+    localStorage.removeItem('score');
+    localStorage.removeItem('userPin');
+    localStorage.removeItem('username');
+    localStorage.removeItem('selectedAvatar');
+    window.location.href = 'create.html';
 
   } catch (error) {
     console.error("Error updating document:", error);
     // Handle error
   }
-  localStorage.removeItem('score')
-  localStorage.removeItem('userPin')
-  
 }
+
 
 
 // async function pickAns(ev, i) {

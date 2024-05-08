@@ -177,7 +177,7 @@
     function showlb() {
     showUsername.innerHTML = "";
 
-    db.collection("posts").where("gamepin", "==", pin).get()
+    db.collection("posts").where("gamepin", "==", parseInt(pin)).get()
     .then((querySnapshot) => {
         const players = [];
         querySnapshot.forEach((doc) => {
@@ -266,7 +266,7 @@
             db.collection("posts").doc(userid).set({
                 username: userid,
                 score: recieve,
-                gamepin: pin
+                gamepin: parseInt(pin)
             })
                 .then(() => {
                     console.log("Data saved to Firestore:", recieve);
@@ -300,26 +300,25 @@
     }
 
 
-    // Assuming `pin` contains the user's game pin
 
-// Function to listen for changes to the endGame flag
 function listenForEndGame() {
-  // Listen for real-time changes to the document corresponding to the user's game pin
-  db.collection(pin).doc(`id${currentindex}`).onSnapshot((doc) => {
-    if (doc.exists) {
-      const endGame = doc.data().endGame;
-      if (endGame === true) {
-        localStorage.removeItem('score')
-        localStorage.removeItem('username')
-        localStorage.removeItem('selectedAvatar')
-        localStorage.removeItem('userPin')
-        window.location.href = "input.html";
-      }
-    } else {
-      console.log("No such document!");
-    }
-  });
+  db.collection(pin)
+    .where("endGame", "==", true)
+    .onSnapshot((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const endGame = doc.data().endGame;
+        if (endGame === true) {
+          // Perform your desired actions when endGame is true
+          localStorage.removeItem('score')
+          localStorage.removeItem('username')
+          localStorage.removeItem('selectedAvatar')
+          localStorage.removeItem('userPin')
+          window.location.href = "input.html";
+        }
+      });
+    });
 }
+
 
 // Call the function to start listening for changes
 listenForEndGame();

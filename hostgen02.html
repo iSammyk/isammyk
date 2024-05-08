@@ -311,27 +311,15 @@
     let infos;
     let admin = true;
     let code = 202030;
-    localStorage.setItem('admin', JSON.stringify(code))
+    localStorage.setItem('userPin', code)
     let pin;
-    let pinn = localStorage.getItem('admin')
-    pin = pinn.toString();
-
-
-    // // Generate a random game code and display it
-    // const codee = Math.floor(Math.random() * 10000000);
+    let pinn = localStorage.getItem('userPin')
+    pin = parseInt(pinn);
     const hero = document.getElementById("hero");
     let gamePin = pin;
     hero.textContent = gamePin;
 
-
-    db.collection(pin).where("gamePin", "==", pin).get().then(async (querySnapshot) => {
-      querySnapshot.forEach(async (doc) => {
-        await doc.ref.update({
-          endGame: false
-        });
-        console.log("Document updated successfully");
-      });
-    });
+    
 
     // Initialize a counter variable
     let userCount = 0;
@@ -339,7 +327,7 @@
     function looop() {
         // Retrieve data from Firestore after initializing Firebase
         db.collection("posts").where("gamepin", "==", pin).get()
-          .then((querySnapshot) => {
+        .then((querySnapshot) => {
             // Clear the old names by setting cont's innerHTML to an empty string
             cont.innerHTML = "";
             userCount = 0;
@@ -375,15 +363,36 @@
 
     console.log(gamePin);
     function sgame() {
+        db.collection(pin.toString())
+    .where("endGame", "==", true)
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        doc.ref.update({
+          endGame: false,
+        })
+        .then(() => {
+          console.log("Document successfully updated!");
+        })
+        .catch((error) => {
+          console.error("Error updating document: ", error);
+        });
+      });
+    })
+    .catch((error) => {
+      console.error("Error getting documents: ", error);
+    });
+
+         console.log("ewjhbekjwekje");
         localStorage.setItem('admin', JSON.stringify(admin))
         clearInterval(intervalId, 1000)
-        var washingtonRef = db.collection(pin).doc(`id${currentIndex}`);
+        var washingtonRef = db.collection(pin.toString()).doc(`id${currentIndex}`);
         return washingtonRef.update({
             hasStarted: true,
         })
             .then(() => {
                 console.log("Document successfully updated!");
-                window.location.href = "quiz.html";
+               window.location.href = 'quiz.html';
             })
             .catch((error) => {
                 // The document probably doesn't exist.

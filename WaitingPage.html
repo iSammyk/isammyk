@@ -320,11 +320,8 @@
   // Initialize a counter variable
   let userCount = 0;
   let currentIndex = 0;
-  let code = 151030;
-  localStorage.setItem('userPin', JSON.stringify(code))
-  let pin;
   let pinn = localStorage.getItem('userPin')
-  pin = pinn.toString();
+  pin = parseInt(pinn);
   console.log(pin);
   function looop() {
     db.collection("posts").where("gamepin", "==", pin).get()
@@ -384,7 +381,7 @@
 
 
   async function fetchQue() {
-    var docRef = db.collection(pin).doc(`id${currentIndex}`);
+    var docRef = db.collection(pin.toString()).doc(`id${currentIndex}`);
     docRef.get().then((doc) => {
       if (doc.exists) {
         if (doc.data().hasStarted == true) {
