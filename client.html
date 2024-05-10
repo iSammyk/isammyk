@@ -15,6 +15,20 @@
     <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-storage-compat.js"></script>
     <title>Document</title>
 </head>
+<style>
+    .username{
+        background-image: url(blue.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh !important;
+    }
+
+    .imad{
+    width: 30px;
+    border-radius: 100%;
+  }
+</style>
 
 <body onload="" class="bg-info ">
     <main id="maint" class="">
@@ -38,7 +52,7 @@
 
     <main id="kojo" class="text-center container-fluid ">
         <h2 class="bg-light col-6 m-auto text-center my-2 rounded ">Scoreboard</h2>
-        <div id="user"></div>
+        <div id="user" class="username"></div>
     </main>
     <main class="spin" id="spinner">
         <h6 class="mb-5 fw-bold ">Loading Question</h6><br>
@@ -94,7 +108,7 @@
     kojo.style.display = "none";
 
 
-    let currentindex = 0;
+    let currentindex;
     let pickedAns = [];
     let score = 0;
     let quizz = [];
@@ -137,6 +151,7 @@
                 currentopt = el.data().options
                 currentAns = el.data().correctOption
                 num = el.data().index + 1;
+                currentindex = el.data().index
                 console.log(num);
                 displayNum.innerHTML = num;
                 var docRef = db.collection(pin);
@@ -175,15 +190,28 @@
     let username;
     
     function showlb() {
-    showUsername.innerHTML = "";
 
+ var docRef = db.collection(pin);
+  docRef.get().then((querySnapshot) => {
+  const numberOfDocs = querySnapshot.size;
+  console.log("Number of documents:", numberOfDocs);
+  nume = numberOfDocs
+  if(currentindex >= nume -1){
+    window.location.href = 'leaderboards.html'
+  }
+  }).catch((error) => {
+      console.log(error);
+  });
+
+    showUsername.innerHTML = "";
     db.collection("posts").where("gamepin", "==", parseInt(pin)).get()
     .then((querySnapshot) => {
         const players = [];
         querySnapshot.forEach((doc) => {
         const username = doc.id;
         const score = doc.data().score;
-        players.push({ username, score });
+        const avatar = doc.data().avatar;
+        players.push({ username, score , avatar});
         console.log(players);
         });
 
@@ -194,11 +222,15 @@
         players.forEach((player, index) => {
             const rank = index + 1;
             const userHTML = `
-                <div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
-                    <p class="h5 fw-bold">${rank}. ${player.username}</p>
-                    <p class="fs-3 fw-bold">${player.score}</p>
-                </div>
-                <br>`;
+            <div class="d-flex justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%;">
+            <div class="d-flex align-items-center">
+              <span class="h5 fw-bold">${rank}.</span>
+              <img src="${player.avatar}" class="imad mx-2" alt="">
+              <p class="h5 fw-bold">${player.username}</p>
+            </div>
+            <p class="fs-3 fw-bold pb-3">${player.score}</p>
+          </div>
+          <br>`;
             showUsername.innerHTML += userHTML;
         });
     });

@@ -86,14 +86,17 @@ button:hover .play {
   transform: translateX(200%);
   transition-delay: 300ms;
 }
+
 </style>
+
 </head>
 <body>
     <main class="mx-auto mt-5" style="width: max-content;">
         <div class="w-100 mx-auto"><img src="isammyy-removebg-preview.png" alt="" style="width: 100%; height: 35vh;"></div>
         <div class="conatainer card mx-auto p-3" style="background-color: rgb(130, 120, 147);">
             <div class="input-wrapper my-3 w-100">
-                <input id="coded" type="number" placeholder="Game Pin" name="text" class="input">
+                <input type="text" id="coded" oninput="this.value = this.value.replace(/[^0-9]/g, '')"  class="input outline-none " placeholder="Game Pin" >
+
               </div>
             <button onclick="playy(event)">
                 <svg height="36px" width="36px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
@@ -140,6 +143,13 @@ button:hover .play {
  </script>
 
 <script>
+  let reloadTimeout;
+
+reloadTimeout = setTimeout(() => {
+  location.reload();
+}, 1000);
+clearTimeout(reloadTimeout);
+
     let coded =  document.getElementById("coded")
 //     let allQues
 

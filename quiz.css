@@ -7,6 +7,11 @@
     /* flex-direction: column; */
     
 }
+.imad{
+  width: 30px;
+  border-radius: 100%;
+}
+
 .mot{
     width: 48%;
     text-align: center;

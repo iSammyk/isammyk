@@ -155,9 +155,6 @@
 </style>
 <body>
   <div class="deco">
-    <div class="w-25 mx-auto d-flex justify-content-center">
-  <button class="btn btn-danger my-2 mx-auto" onclick="endd()"><span> END QUIZ</span></button>
-    </div>
   <div class="leaderboard mb-5">
     <!-- Bronze -->
     <div id="bronze" class="stand bronze d-flex flex-column align-items-center justify-content-center">
@@ -275,53 +272,26 @@ function showlb() {
 showlb();
 
 
-
-
-async function endd() {
-  try {
-    const querySnapshot = await db.collection("posts").where("gamepin", "==", gamePin).get();
-    
-    // Array to store promises
-    const deletePromises = [];
-
-    querySnapshot.forEach((doc) => {
-      // Add each delete operation to the array
-      deletePromises.push(doc.ref.delete());
+function listenForEndGame() {
+  db.collection(gamePin.toString())
+    .where("endGame", "==", true)
+    .onSnapshot((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const endGame = doc.data().endGame;
+        if (endGame === true) {
+          // Perform your desired actions when endGame is true
+          localStorage.removeItem('score')
+          localStorage.removeItem('username')
+          localStorage.removeItem('selectedAvatar')
+          localStorage.removeItem('userPin')
+          window.location.href = "input.html";
+        }
+      });
     });
-
-    // Wait for all delete operations to complete
-    await Promise.all(deletePromises);
-
-    await db.collection(gamePin.toString()).doc(`id${currentindex}`).update({
-      hasStarted: false
-    });
-
-    // console.log("donee");
-
-const querySnapshots = await db.collection(gamePin.toString()).where("endGame", "==", false).get();
-querySnapshots.forEach(async (doc) => {
-    try {
-        await doc.ref.update({
-            endGame: true
-        });
-        console.log("Document updated successfully:", doc.id);
-    } catch (error) {
-        console.error("Error updating document:", error);
-    }
-});
-
-    console.log("Document successfully updated!");
-    localStorage.removeItem('score');
-    localStorage.removeItem('userPin');
-    localStorage.removeItem('username');
-    localStorage.removeItem('selectedAvatar');
-    localStorage.removeItem('currentindex');
-    window.location.href = 'create.html';
-
-  } catch (error) {
-    console.error("Error updating document:", error);
-    // Handle error
-  }
 }
+
+
+// Call the function to start listening for changes
+listenForEndGame();
 
 </script>

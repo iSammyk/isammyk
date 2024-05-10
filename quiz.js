@@ -623,7 +623,8 @@ let quiz3 = {
 
 
 let knot = document.querySelector(".game-quiz-container");
-let currentindex = 0;
+let currentindexs = localStorage.getItem('currentindex') ||  0;
+let currentindex = parseInt(currentindexs)
 let pickedAns = [];
 let score = 0;
 let quizz = [];
@@ -635,6 +636,7 @@ let quiz;
 let seconds = 10;
 
 kojo.style.display = "none"
+console.log(currentindex);
 
 // function setIt() {
 //   quiz2.questions.forEach((el, i) => {
@@ -798,27 +800,34 @@ function showQue() {
 
 // });
 let username;
+let nume;
 let recieve = 0;
 function showlb() {
   var docRef = db.collection(pin);
   docRef.get().then((querySnapshot) => {
   const numberOfDocs = querySnapshot.size;
   console.log("Number of documents:", numberOfDocs);
-
+  nume = numberOfDocs
+  console.log(nume);
+  let nextQuesbtn = `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>`;
+  // let endgame = `<button class="btn btn-danger my-2" onclick="endd()"><span> END QUIZ</span></button>`
+  showUsername.innerHTML += nextQuesbtn;
+  if(currentindex >= nume - 1){
+    window.location.href = 'leaderboard.html'
+  }
   }).catch((error) => {
       console.log(error);
   });
   showUsername.innerHTML = "";
-  let nextQuesbtn = `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>`;
-  let endgame = `<button class="btn btn-danger my-2" onclick="endd()"><span> END QUIZ</span></button>`
-  showUsername.innerHTML +=  currentindex <= 1  ? endgame : nextQuesbtn;
+
     db.collection("posts").where("gamepin", "==", parseInt(pin)).get()
     .then((querySnapshot) => {
         const players = [];
         querySnapshot.forEach((doc) => {
         const username = doc.id;
         const score = doc.data().score;
-        players.push({ username, score });
+        const avatar = doc.data().avatar;
+        players.push({ username, score, avatar });
         console.log(players);
         });
       // Sort the players by score in descending order
@@ -828,11 +837,15 @@ function showlb() {
       players.forEach((player, index) => {
           const rank = index + 1;
           const userHTML = `
-              <div class="justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%; display:flex; ">
-                  <p class="h5 fw-bold">${rank}. ${player.username}</p>
-                  <p class="fs-3 fw-bold">${player.score}</p>
-              </div>
-              <br>`;
+          <div class="d-flex justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%;">
+          <div class="d-flex align-items-center">
+            <span class="h5 fw-bold">${rank}.</span>
+            <img src="${player.avatar}" class="imad mx-2" alt="">
+            <p class="h5 fw-bold">${player.username}</p>
+          </div>
+          <p class="fs-3 fw-bold pb-3">${player.score}</p>
+        </div>
+        <br>`;
           showUsername.innerHTML += userHTML;
       });
   });
@@ -844,7 +857,7 @@ let userid;
 
 async function endd() {
   try {
-    const querySnapshot = await db.collection("posts").where("gamepin", "==",parseInt(pin)).get();
+    const querySnapshot = await db.collection("posts").where("gamepin", "==", parseInt(pin)).get();
     console.log(parseInt(pin));
     
     // Array to store promises
@@ -864,10 +877,17 @@ async function endd() {
 
     console.log("donee");
 
-    var washingtonRefs = db.collection(pin.toString()).doc(`id${currentindex}`);
-    await washingtonRefs.update({
-      endGame: true,
-    });
+const querySnapshots = await db.collection(pin.toString()).where("endGame", "==", false).get();
+querySnapshots.forEach(async (doc) => {
+    try {
+        await doc.ref.update({
+            endGame: true
+        });
+        console.log("Document updated successfully:", doc.id);
+    } catch (error) {
+        console.error("Error updating document:", error);
+    }
+});
 
     console.log("Document successfully updated!");
     localStorage.removeItem('score');
@@ -1007,6 +1027,7 @@ async function net() {
       count()
       kojo.style.display = "none";
       main.style.display = "block";
+      localStorage.setItem('currentindex', currentindex)
     }
 
   } catch (error) {
@@ -1050,7 +1071,6 @@ async function net() {
 //       alert("oiuytr")
 //       let dd = doc.data().index == currentindex
 //       console.log(dd);
-//       return
 //     }
 //   });
 // }, (error) => {

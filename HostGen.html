@@ -364,24 +364,24 @@
     console.log(gamePin);
     function sgame() {
         db.collection(pin.toString())
-    .where("endGame", "==", true)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        doc.ref.update({
-          endGame: false,
-        })
-        .then(() => {
-          console.log("Document successfully updated!");
-        })
-        .catch((error) => {
-          console.error("Error updating document: ", error);
-        });
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      doc.ref.update({
+        endGame: false,
+      })
+      .then(() => {
+        console.log("Document successfully updated!");
+      })
+      .catch((error) => {
+        console.error("Error updating document: ", error);
       });
-    })
-    .catch((error) => {
-      console.error("Error getting documents: ", error);
     });
+  })
+  .catch((error) => {
+    console.error("Error getting documents: ", error);
+  });
+
 
          console.log("ewjhbekjwekje");
         localStorage.setItem('admin', JSON.stringify(admin))
