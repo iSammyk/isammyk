@@ -28,8 +28,9 @@ let saves = document.getElementById("saves")
 
 
 
-
-
+function create(){
+  window.location.href = 'usercreate.html'
+}
 
 // none.style.display = "none"
 // function edit(){
@@ -40,6 +41,40 @@ let saves = document.getElementById("saves")
 // }, 4000);
 // }
 
+
+let pin = localStorage.getItem('userCode');
+console.log(pin);
+
+function clearSt() {
+ if(pin){
+
+  const firestore = firebase.firestore();
+  const collectionRef = firestore.collection(pin); 
+
+  collectionRef.get().then(querySnapshot => {
+
+      const deletePromises = [];
+      querySnapshot.forEach(doc => {
+          deletePromises.push(doc.ref.delete());
+      });
+
+      return Promise.all(deletePromises);
+  }).then(() => {
+
+      return collectionRef.delete();
+  }).then(() => {
+      console.log('Collection successfully deleted.');
+  }).catch(error => {
+      console.error('Error deleting collection: ', error);
+  });
+
+}
+localStorage.removeItem('userPin')
+localStorage.removeItem('userCode')
+
+}
+
+clearSt();
   
 function checkuser(){
   firebase.auth().onAuthStateChanged((user) => {
@@ -50,7 +85,7 @@ function checkuser(){
       imgReader.src = user.photoURL
       console.log(user)
       display.innerHTML = `${user.email}`
-      // ...
+      
   } else {
 
       // User is signed out

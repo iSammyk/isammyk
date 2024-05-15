@@ -618,8 +618,834 @@ let quiz3 = {
   ]
 };
 
+let quiz4 = {
+  gamePin: "419234",
+  hasStarted: false,
+  questions: [ 
+    {
+      index: 0,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who was the first military head of state in Nigeria?",
+      options: ["General Yakubu Gowon", "General Aguiyi Ironsi", "General Ibrahim Babangida", "General Murtala Mohammed"],
+      correctOption: "General Aguiyi Ironsi"
+    },
+      
+    {
+      index: 1,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "What year did Nigeria gain independence?",
+      options: ["1959", "1961", "1963", "1960"],
+      correctOption: "1960"
+    },
+      
+    {
+      index: 2,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the current president of Nigeria?",
+      options: ["Goodluck Jonathan", "Muhammadu Buhari", "Olusegun Obasanjo", "Yemi Osinbajo"],
+      correctOption: "Muhammadu Buhari"
+    },
+      
+    {
+      index: 3,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Nigerian city is known as the center of excellence?",
+      options: ["Abuja", "Kano", "Port Harcourt", "Lagos"],
+      correctOption: "Lagos"
+    },
+      
+    {
+      index: 4,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the first female finance minister of Nigeria?",
+      options: ["Ngozi Okonjo-Iweala", "Nenadi Usman", "Kemi Adeosun", "Zainab Ahmed"],
+      correctOption: "Ngozi Okonjo-Iweala"
+    },
+      
+    {
+      index: 5,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the capital city of Nigeria?",
+      options: ["Abuja", "Lagos", "Kano", "Port Harcourt"],
+      correctOption: "Abuja"
+    },
+      
+    {
+      index: 6,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Nigerian musician won a Grammy award in 2021?",
+      options: ["Davido", "Burna Boy", "Wizkid", "Tiwa Savage"],
+      correctOption: "Wizkid"
+    },
+      
+    {
+      index: 7,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who led Nigeria during the Nigerian Civil War?",
+      options: ["General Ibrahim Babangida", "General Yakubu Gowon", "General Murtala Mohammed", "General Aguiyi Ironsi"],
+      correctOption: "General Yakubu Gowon"
+    },
+      
+    {
+      index: 8,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Nigerian author wrote the novel 'Things Fall Apart'?",
+      options: ["Wole Soyinka", "Chimamanda Ngozi Adichie", "Chinua Achebe", "Ben Okri"],
+      correctOption: "Chinua Achebe"
+    },
+      
+    {
+      index: 9,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the current Chief Justice of Nigeria?",
+      options: ["Justice Walter Onnoghen", "Justice Amina Mohammed", "Justice Ibrahim Tanko Muhammad", "Justice Muhammadu Buhari"],
+      correctOption: "Justice Ibrahim Tanko Muhammad"
+    },
+      
+    {
+      index: 10,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Nigerian athlete won a gold medal at the 2016 Olympics?",
+      options: ["Hakeem Olajuwon", "Folorunsho Alakija", "Blessing Okagbare", "Chioma Ajunwa"],
+      correctOption: "Blessing Okagbare"
+    },
+      
+    {
+      index: 11,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "What year did Nigeria become a republic?",
+      options: ["1961", "1959", "1963", "1960"],
+      correctOption: "1963"
+    },
+      
+    {
+      index: 12,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Nigerian city is famous for its annual Durbar festival?",
+      options: ["Ibadan", "Kano", "Lagos", "Abuja"],
+      correctOption: "Kano"
+    },
+      
+    {
+      index: 13,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who was the first female governor in Nigeria?",
+      options: ["Kemi Adeosun", "Nenadi Usman", "Ngozi Okonjo-Iweala", "Dame Virginia Ngozi Etiaba"],
+      correctOption: "Dame Virginia Ngozi Etiaba"
+    },
+      
+    {
+      index: 14,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the largest ethnic group in Nigeria?",
+      options: ["Ijaw", "Hausa-Fulani", "Yoruba", "Igbo"],
+      correctOption: "Hausa-Fulani"
+    },
+      
+    {
+      index: 15,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who founded the city of Lagos?",
+      options: ["Dr. Nnamdi Azikiwe", "King Jaja of Opobo", "Eshman", "Sir Frederick Lugard"],
+      correctOption: "Eshman"
+    },
+      
+    {
+      index: 16,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Nigerian leader introduced the 'War Against Indiscipline' campaign?",
+      options: ["General Olusegun Obasanjo", "General Ibrahim Babangida", "General Yakubu Gowon", "General Muhammadu Buhari"],
+      correctOption: "General Muhammadu Buhari"
+    },
+      
+    {
+      index: 17,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "What year was Nigeria's first constitution enacted?",
+      options: ["1999", "1954", "1960", "1963"],
+      correctOption: "1960"
+    },
+      
+    {
+      index: 18,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is regarded as the 'Father of Nigerian Literature'?",
+      options: ["Wole Soyinka", "Chimamanda Ngozi Adichie", "Ben Okri", "Chinua Achebe"],
+      correctOption: "Chinua Achebe"
+    },
+      
+    {
+      index: 19,
+      gamePin: "419234",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Nigerian city is referred to as the 'City of Peace'?",
+      options: ["Jos", "Port Harcourt", "Kano", "Lagos"],
+      correctOption: "Jos"
+    }
 
+  ]
+};
 
+let quiz5 = {
+  gamePin: "162922",
+  hasStarted: false,
+  questions: [ 
+    {
+      index: 0,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which HTML tag is used to create a heading in a webpage?",
+      options: ["title tag", "head tag", "p tag", "h1 tag"],
+      correctOption: "<h1>"
+    },
+      
+    {
+      index: 1,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "What does CSS stand for?",
+      options: ["Cascading Style Sheets", "Creative Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"],
+      correctOption: "Cascading Style Sheets"
+    },
+      
+    {
+      index: 2,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which property in CSS is used to change the text color of an element?",
+      options: ["foreground-color", "text-color", "font-color", "color"],
+      correctOption: "color"
+    },
+      
+    {
+      index: 3,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "What does the 'href' attribute in the <a> tag specify?",
+      options: ["The link's destination URL", "The link's ID", "The link's text content", "The link's target"],
+      correctOption: "The link's destination URL"
+    },
+      
+    {
+      index: 4,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which JavaScript method is used to add an element to the end of an array?",
+      options: ["concat()", "addToEnd()", "append()", "push()"],
+      correctOption: "push()"
+    },
+      
+    {
+      index: 5,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which HTML tag is used to define a table?",
+      options: ["<th>", "<tr>", "<td>", "<table>"],
+      correctOption: "<table>"
+    },
+      
+    {
+      index: 6,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "In CSS, which property is used to change the background color of an element?",
+      options: ["bgcolor", "background", "background-color", "color"],
+      correctOption: "background-color"
+    },
+      
+    {
+      index: 7,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which JavaScript keyword is used to declare a variable?",
+      options: ["const", "let", "variable", "var"],
+      correctOption: "var"
+    },
+      
+    {
+      index: 8,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "What does CSS margin property specify?",
+      options: ["Space between elements' content and padding", "Space between elements' border and content", "Space between elements", "Space between elements' padding and border"],
+      correctOption: "Space between elements' border and content"
+    },
+      
+    {
+      index: 9,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which HTML attribute is used to specify additional information about an element?",
+      options: ["title", "class", "style", "id"],
+      correctOption: "title"
+    },
+      
+    {
+      index: 10,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which CSS property is used to make text italic?",
+      options: ["font-style", "italic", "text-style", "font-italic"],
+      correctOption: "font-style"
+    },
+      
+    {
+      index: 11,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "What does the 'src' attribute in the <img> tag specify?",
+      options: ["Image file path", "Image dimensions", "Image alternative text", "Image caption"],
+      correctOption: "Image file path"
+    },
+      
+    {
+      index: 12,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which JavaScript method is used to remove the last element from an array?",
+      options: ["splice()", "delete()", "remove()", "pop()"],
+      correctOption: "pop()"
+    },
+      
+    {
+      index: 13,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which HTML element is used to define an unordered list?",
+      options: ["<list>", "<ol>", "<ul>", "<li>"],
+      correctOption: "<ul>"
+    },
+      
+    {
+      index: 14,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "In CSS, which property is used to change the font size of an element?",
+      options: ["text-size", "font-size", "font", "size"],
+      correctOption: "font-size"
+    },
+      
+    {
+      index: 15,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which JavaScript method is used to join two or more arrays?",
+      options: ["join()", "merge()", "concat()", "combine()"],
+      correctOption: "concat()"
+    },
+      
+    {
+      index: 16,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the correct syntax for referring to an external script called 'script.js'?",
+      options: ["<script name='script.js'>", "<script href='script.js'>", "<script link='script.js'>", "<script src='script.js'>"],
+      correctOption: "<script src='script.js'>"
+    },
+      
+    {
+      index: 17,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which CSS property is used to set the background image of an element?",
+      options: ["image", "background-url", "background-image", "background"],
+      correctOption: "background-image"
+    },
+      
+    {
+      index: 18,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "Which HTML tag is used to define a list item?",
+      options: ["<ol>", "<list>", "<li>", "<ul>"],
+      correctOption: "<li>"
+    },
+      
+    {
+      index: 19,
+      gamePin: "162922",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the correct way to comment in JavaScript?",
+      options: ["<!--This is a comment-->", "##This is a comment##", "/This is a comment/", "//This is a comment"],
+      correctOption: "//This is a comment"
+    }
+    
+  ] 
+    
+};
+
+let quiz6 = {
+  gamePin: "391333",
+  hasStarted: false,
+  questions: [ 
+    {
+      index: 0,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the primary function of a router in a computer network?",
+      options: ["Forward data between networks", "Store files and data", "Provide power to devices", "Encrypt data transmissions"],
+      correctOption: "Forward data between networks"
+    },
+      
+    {
+      index: 1,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which programming language is commonly used for building mobile applications?",
+      options: ["Java", "C++", "Python", "Swift"],
+      correctOption: "Swift"
+    },
+      
+    {
+      index: 2,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a firewall in computer security?",
+      options: ["Monitor and control network traffic", "Store backup copies of files", "Manage computer memory", "Optimize website performance"],
+      correctOption: "Monitor and control network traffic"
+    },
+      
+    {
+      index: 3,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which database management system is known for its scalability and high availability?",
+      options: ["MySQL", "SQLite", "MongoDB", "Oracle"],
+      correctOption: "MongoDB"
+    },
+      
+    {
+      index: 4,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a CDN (Content Delivery Network) in web development?",
+      options: ["Improve website performance by caching content", "Manage user authentication", "Create responsive web designs", "Track user interactions"],
+      correctOption: "Improve website performance by caching content"
+    },
+      
+    {
+      index: 5,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which version control system is commonly used for managing code repositories?",
+      options: ["Git", "SVN", "Mercurial", "Perforce"],
+      correctOption: "Git"
+    },
+      
+    {
+      index: 6,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the primary purpose of HTML5 Web Storage?",
+      options: ["Store data locally in a browser", "Host websites on a server", "Create responsive web designs", "Optimize website performance"],
+      correctOption: "Store data locally in a browser"
+    },
+      
+    {
+      index: 7,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which programming language is commonly used for data analysis and machine learning?",
+      options: ["Java", "Python", "C#", "Ruby"],
+      correctOption: "Python"
+    },
+      
+    {
+      index: 8,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a Virtual Private Network (VPN) in network security?",
+      options: ["Establish secure connections", "Host websites on a server", "Optimize website performance", "Manage computer memory"],
+      correctOption: "Establish secure connections"
+    },
+      
+    {
+      index: 9,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which cloud computing service is known for its serverless platform?",
+      options: ["AWS", "Azure", "GCP", "IBM Cloud"],
+      correctOption: "AWS"
+    },
+      
+    {
+      index: 10,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a Docker container in software development?",
+      options: ["Package and distribute applications", "Manage user authentication", "Create responsive web designs", "Optimize website performance"],
+      correctOption: "Package and distribute applications"
+    },
+      
+    {
+      index: 11,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which programming language is commonly used for building dynamic web applications?",
+      options: ["Java", "C++", "Python", "JavaScript"],
+      correctOption: "JavaScript"
+    },
+      
+    {
+      index: 12,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of SQL (Structured Query Language) in database management?",
+      options: ["Interact with and manipulate databases", "Create responsive web designs", "Optimize website performance", "Manage computer memory"],
+      correctOption: "Interact with and manipulate databases"
+    },
+      
+    {
+      index: 13,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which web development framework uses the MVC pattern?",
+      options: ["Django", "Flask", "Ruby on Rails", "Express.js"],
+      correctOption: "Ruby on Rails"
+    },
+      
+    {
+      index: 14,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of an API (Application Programming Interface) in software development?",
+      options: ["Define software component interactions", "Manage user authentication", "Create responsive web designs", "Optimize website performance"],
+      correctOption: "Define software component interactions"
+    },
+      
+    {
+      index: 15,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which programming language is commonly used for building iOS mobile applications?",
+      options: ["Java", "C++", "Python", "Swift"],
+      correctOption: "Swift"
+    },
+      
+    {
+      index: 16,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a reverse proxy server in web development?",
+      options: ["Improve performance and security", "Create responsive web designs", "Optimize website performance", "Manage computer memory"],
+      correctOption: "Improve performance and security"
+    },
+      
+    {
+      index: 17,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which version control system is commonly used for managing code repositories?",
+      options: ["Git", "SVN", "Mercurial", "Perforce"],
+      correctOption: "Git"
+    },
+      
+    {
+      index: 18,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of GraphQL in web development?",
+      options: ["Provide efficient and flexible APIs", "Manage user authentication", "Create responsive web designs", "Optimize website performance"],
+      correctOption: "Provide efficient and flexible APIs"
+    },
+      
+    {
+      index: 19,
+      gamePin: "391333",
+      hasStarted: false,
+      endGame: false,
+      question: "Which database management system is known for its relational database capabilities?",
+      options: ["MySQL", "MongoDB", "SQLite", "Oracle"],
+      correctOption: "MySQL"
+    }
+    
+]     
+};
+
+let quiz7 = {
+  gamePin: "991203",
+  hasStarted: false,
+  questions: [ 
+    {
+      index: 0,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a CSS preprocessor?",
+      options: ["Extend CSS with variables, mixins, and functions", "Convert CSS to machine code", "Optimize CSS performance", "Create interactive UIs"],
+      correctOption: "Extend CSS with variables, mixins, and functions"
+    },
+      
+    {
+      index: 1,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which programming language is commonly used for building scalable web applications?",
+      options: ["Python", "Java", "C#", "Ruby"],
+      correctOption: "Java"
+    },
+      
+    {
+      index: 2,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a load balancer in a web server environment?",
+      options: ["Compress files for transmission", "Manage authentication", "Optimize performance with caching","Distribute traffic across servers"],
+      correctOption: "Distribute traffic across servers"
+    },
+      
+    {
+      index: 3,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which JavaScript framework is commonly used for building single-page applications?",
+      options: ["React", "Angular", "Vue.js", "Ember.js"],
+      correctOption: "React"
+    },
+      
+    {
+      index: 4,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a CMS (Content Management System) in web development?",
+      options: ["Manage authentication", "Create responsive designs","Simplify content creation and management",  "Optimize performance"],
+      correctOption: "Simplify content creation and management"
+    },
+      
+    {
+      index: 5,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which cloud computing service is known for its serverless computing platform?",
+      options: ["AWS", "Azure", "GCP", "IBM Cloud"],
+      correctOption: "AWS"
+    },
+      
+    {
+      index: 6,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a reverse proxy server in web development?",
+      options: [ "Create responsive designs", "Improve performance and security", "Optimize performance", "Manage memory"],
+      correctOption: "Improve performance and security"
+    },
+      
+    {
+      index: 7,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which version control system is commonly used for managing code repositories?",
+      options: [ "SVN", "Mercurial", "Perforce", "Git"],
+      correctOption: "Git"
+    },
+      
+    {
+      index: 8,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of GraphQL in web development?",
+      options: [ "Manage authentication", "Efficient alternative to RESTful APIs","Create responsive designs", "Optimize performance"],
+      correctOption: "Efficient alternative to RESTful APIs"
+    },
+      
+    {
+      index: 9,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which database management system is known for its relational database capabilities?",
+      options: [ "MongoDB", "SQLite", "MySQL", "Oracle"],
+      correctOption: "MySQL"
+    },
+      
+    {
+      index: 10,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a CSS preprocessor?",
+      options: ["Extend CSS with variables, mixins, and functions", "Convert CSS to machine code", "Optimize CSS performance", "Create interactive UIs"],
+      correctOption: "Extend CSS with variables, mixins, and functions"
+    },
+      
+    {
+      index: 11,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which programming language is commonly used for building scalable web applications?",
+      options: ["Python", "C#", "Ruby", "Java"],
+      correctOption: "Java"
+    },
+      
+    {
+      index: 12,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a load balancer in a web server environment?",
+      options: [ "Compress files for transmission", "Distribute traffic across servers", "Manage authentication", "Optimize performance with caching"],
+      correctOption: "Distribute traffic across servers"
+    },
+      
+    {
+      index: 13,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which JavaScript framework is commonly used for building single-page applications?",
+      options: ["Angular", "Vue.js", "Ember.js", "React"],
+      correctOption: "React"
+    },
+      
+    {
+      index: 14,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a CMS (Content Management System) in web development?",
+      options: ["Simplify content creation and management", "Manage authentication", "Create responsive designs", "Optimize performance"],
+      correctOption: "Simplify content creation and management"
+    },
+      
+    {
+      index: 15,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which cloud computing service is known for its serverless computing platform?",
+      options: ["AWS", "Azure", "GCP", "IBM Cloud"],
+      correctOption: "AWS"
+    },
+      
+    {
+      index: 16,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of a reverse proxy server in web development?",
+      options: [ "Create responsive designs", "Improve performance and security", "Optimize performance", "Manage memory"],
+      correctOption: "Improve performance and security"
+    },
+      
+    {
+      index: 17,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which version control system is commonly used for managing code repositories?",
+      options: ["Git", "SVN", "Mercurial", "Perforce"],
+      correctOption: "Git"
+    },
+      
+    {
+      index: 18,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the purpose of GraphQL in web development?",
+      options: ["Manage authentication", "Create responsive designs", "Optimize performance", "Efficient alternative to RESTful APIs"],
+      correctOption: "Efficient alternative to RESTful APIs"
+    },
+      
+    {
+      index: 19,
+      gamePin: "991203",
+      hasStarted: false,
+      endGame: false,
+      question: "Which database management system is known for its relational database capabilities?",
+      options: ["MySQL", "MongoDB", "SQLite", "Oracle"],
+      correctOption: "MySQL"
+    }    
+  ] 
+    
+};
 
 
 let knot = document.querySelector(".game-quiz-container");
@@ -636,11 +1462,11 @@ let quiz;
 let seconds = 10;
 
 kojo.style.display = "none"
-console.log(currentindex);
+// console.log(currentindex);
 
 // function setIt() {
-//   quiz2.questions.forEach((el, i) => {
-//     db.collection("202030").doc(`id${i}`).set(el)
+//   quiz4.questions.forEach((el, i) => {
+//     db.collection("419234").doc(`id${i}`).set(el)
 //       .then(() => {
 //         console.log("Document successfully written!");
 //       })
@@ -653,7 +1479,7 @@ console.log(currentindex);
 
 // I SET THE QUIZZEZ INSIDE FIREBASE FROM HERE 
 
-// db.collection("just").doc("151030").set({
+// db.collection("just").doc("419234").set({
 //   mygamepin: quiz1,
 // })
 // .then(() => {
@@ -843,7 +1669,7 @@ function showlb() {
             <img src="${player.avatar}" class="imad mx-2" alt="">
             <p class="h5 fw-bold">${player.username}</p>
           </div>
-          <p class="fs-3 fw-bold pb-3">${player.score}</p>
+          <p class="fs-3 fw-bold">${player.score}</p>
         </div>
         <br>`;
           showUsername.innerHTML += userHTML;

@@ -16,7 +16,7 @@
     <title>Document</title>
 </head>
 <style>
-    .username{
+    body{
         background-image: url(blue.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -188,7 +188,7 @@
 
 
     let username;
-    
+    let avatar;
     function showlb() {
 
  var docRef = db.collection(pin);
@@ -196,7 +196,7 @@
   const numberOfDocs = querySnapshot.size;
   console.log("Number of documents:", numberOfDocs);
   nume = numberOfDocs
-  if(currentindex >= nume -1){
+  if(currentindex >= nume - 1){
     window.location.href = 'leaderboards.html'
   }
   }).catch((error) => {
@@ -210,7 +210,7 @@
         querySnapshot.forEach((doc) => {
         const username = doc.id;
         const score = doc.data().score;
-        const avatar = doc.data().avatar;
+        avatar = doc.data().avatar;
         players.push({ username, score , avatar});
         console.log(players);
         });
@@ -222,13 +222,13 @@
         players.forEach((player, index) => {
             const rank = index + 1;
             const userHTML = `
-            <div class="d-flex justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%;">
+            <div class="d-flex justify-content-between pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%;">
             <div class="d-flex align-items-center">
               <span class="h5 fw-bold">${rank}.</span>
               <img src="${player.avatar}" class="imad mx-2" alt="">
               <p class="h5 fw-bold">${player.username}</p>
             </div>
-            <p class="fs-3 fw-bold pb-3">${player.score}</p>
+            <p class="fs-3 fw-bold">${player.score}</p>
           </div>
           <br>`;
             showUsername.innerHTML += userHTML;
@@ -298,7 +298,8 @@
             db.collection("posts").doc(userid).set({
                 username: userid,
                 score: recieve,
-                gamepin: parseInt(pin)
+                gamepin: parseInt(pin),
+                avatar : avatar
             })
                 .then(() => {
                     console.log("Data saved to Firestore:", recieve);

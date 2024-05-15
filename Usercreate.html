@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-storage-compat.js"></script>
+
+</head>
+
+<body>
+    <main class="container bg-info mx-auto text-center mt-2 p-3" style="width: fit-content;">
+        <form action="">
+            <h1 class="bg-dark text-light fs-6 " >No of quiz :<span class="mx-2 fw-bold text-info" id="lent"></span></h1>
+            <div class="w-75 container">
+                <input id="quest" class="w-100 p-3 my-3 mx-auto" type="text" placeholder="your question">
+                <input id="options1" class=" p-2 my-1" type="text" placeholder="first option">
+                <input id="options2" class=" p-2 my-1" type="text" placeholder="second option">
+                <input id="options3" class=" p-2 my-1" type="text" placeholder="third option">
+                <input id="options4" class=" p-2 my-1" type="text" placeholder="fourth option"> <br> <br>
+                <input id="rAnswer" type="text" class="mt-2 p-2" placeholder="Right answer">
+            </div>
+            <button class="btn btn-success mt-3" onclick="saves(event)">Save</button>
+            <button class="btn btn-success mt-3" onclick="submits(event)">Submit</button>
+        </form>
+    </main>
+</body>
+
+</html>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
+        authDomain: "isammy-k.firebaseapp.com",
+        projectId: "isammy-k",
+        storageBucket: "isammy-k.appspot.com",
+        messagingSenderId: "243915862365",
+        appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
+    };
+    var provider = new firebase.auth.GoogleAuthProvider();
+    const app = firebase.initializeApp(firebaseConfig);
+</script>
+<script>
+    const db = firebase.firestore();
+
+    let codee = Math.floor(Math.random() * 1000000);
+    console.log(codee)
+    let quest = document.getElementById("quest")
+    let options1 = document.getElementById("options1")
+    let options2 = document.getElementById("options2")
+    let options3 = document.getElementById("options3")
+    let options4 = document.getElementById("options4")
+    let rAnswer = document.getElementById("rAnswer")
+    let lent = document.getElementById("lent")
+    let userQuiz = JSON.parse(localStorage.getItem('userQuiz') ) || []
+    let userQuizs = []
+    let index = localStorage.getItem('userIndex') || 0;
+    let myQuiz;
+
+    let lenght = userQuiz.length
+    lent.innerHTML =  lenght || 0
+
+    function saves(ev) {
+        ev.preventDefault();
+        let options = [
+            options1.value.trim(),
+            options2.value.trim(),
+            options3.value.trim(),
+            options4.value.trim()
+        ];
+
+        let correctAnswer = rAnswer.value.trim();
+
+        if (!options.includes(correctAnswer)) {
+            alert("Please make sure the correct answer is one of the initial options!");
+            return;
+        }
+
+        myQuiz = [
+            questions = {
+                index: parseInt(index),
+                gamePin: codee,
+                hasStarted: false,
+                endGame: false,
+                question: quest.value,
+                options: options,
+                correctOption: rAnswer.value
+            }
+
+        ];
+        if (quest.value == '' || options1.value == '' || options2.value == '' || options3.value == '' || options4.value == '' || rAnswer == '') {
+            alert('please fill in all inputs')
+        }
+        else {
+            console.log(myQuiz[0]);
+            userQuiz.push(myQuiz[0]);
+            console.log(userQuiz);
+            localStorage.setItem("userQuiz", JSON.stringify(userQuiz));
+            index++;
+            localStorage.setItem("userIndex",  index);
+            console.log(index);
+            window.location.reload()
+             
+           
+        }
+}
+
+
+    function submits(ev) {
+        ev.preventDefault()
+        if(confirm('Are you sure you want to submit quiz and start playing now?')){
+            userQuiz.forEach((el, i) => {
+            db.collection(codee.toString()).doc(`id${i}`).set(el)
+                .then(() => {
+                    console.log("Document successfully written!");
+                    localStorage.setItem('userCode',  codee);
+                    window.location.href = 'userhostgen.html'
+                    localStorage.removeItem('userQuiz')
+                    localStorage.removeItem('userIndex')
+                   
+                })
+                .catch((error) => {
+                    console.error("Error writing document: ", error);
+                    alert(error)
+                });
+        })
+        }
+    }
+
+</script>
