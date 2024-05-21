@@ -5,52 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="quiz.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-storage-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-storage-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
-
+<style>
+    body{
+        background-image: url(https://pbs.twimg.com/media/EtJszZvW4AE_sUb?format=jpg&name=4096x4096);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh !important;
+    }
+    input{
+        outline: none;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .wed{
+        width: inherit;
+        background-color: transparent;
+        border: none;
+    }
+     ::placeholder{
+        color: white !important;
+    }
+    .lad{
+        background-color: #1e51a2;
+        border: none;
+    }
+    .kill{
+        background-color: #1e51a2;
+    }
+</style>
 <body>
-    <main class="container bg-info mx-auto text-center mt-2 p-3" style="width: fit-content;">
+    <main class=" mx-auto mt-2 p-3" style="width: fit-content;">
         <form action="">
-            <h1 class="bg-dark text-light fs-6 " >No of quiz :<span class="mx-2 fw-bold text-info" id="lent"></span></h1>
-            <div class="w-75 container">
-                <input id="quest" class="w-100 p-3 my-3 mx-auto" type="text" placeholder="your question">
-                <input id="options1" class=" p-2 my-1" type="text" placeholder="first option">
-                <input id="options2" class=" p-2 my-1" type="text" placeholder="second option">
-                <input id="options3" class=" p-2 my-1" type="text" placeholder="third option">
-                <input id="options4" class=" p-2 my-1" type="text" placeholder="fourth option"> <br> <br>
-                <input id="rAnswer" type="text" class="mt-2 p-2" placeholder="Right answer">
+           <div class="d-flex justify-content-end align-items-end ">
+            <h1 class="text-light fs-4 " >No of quiz :<span class="mx-2 fw-bold text-dark" id="lent"></span></h1>
+           </div>
+            <div class="container d-flex flex-wrap justify-content-between">
+                <input id="quest" class="w-100 p-4 fs-3 my-3 mx-auto text-light bg-dark" type="text" placeholder="Your question">
+                <!-- <input id="options1" class="wed p-3 my-1" type="text" placeholder="First option">
+
+                <input id="options2" class="wed p-3 my-1" type="text" placeholder="Second option">
+                <input id="options3" class="wed p-3 my-1" type="text" placeholder="Third option">
+                <input id="options4" class="wed p-3 my-1" type="text" placeholder="Fourth option"> <br> <br> -->
             </div>
-            <button class="btn btn-success mt-3" onclick="saves(event)">Save</button>
-            <button class="btn btn-success mt-3" onclick="submits(event)">Submit</button>
+
+
+            <div class="d-flex flex-wrap mt-2 mx-auto justify-content-center justify-content-between ">
+                <div class="mot mt-2 d-flex align-items-center rounded-2">
+                    <span class="d-flex align-items-center text-center justify-content-center" id="boss" style="width: 90vw; height:100%;">
+                        <label class="kill w-100 fw-bold text-white rounded-2"> 
+                              <input id="options1" class="wed p-3 text-light" type="text" placeholder="First option">
+                        </label>
+                    </span>
+                </div>
+    
+                <div class="mot mt-2 d-flex align-items-center rounded-2">
+                    <span class="d-flex align-items-center text-center justify-content-center" id="boss" style="width: 90vw; height:100%;">
+                        <label class="kill w-100 fw-bold text-white rounded-2"> 
+                            <input id="options2" class="wed p-3 text-light my-1" type="text" placeholder="Second option">
+                        </label>
+                    </span>
+                </div>
+    
+                <div class="mot mt-2 d-flex align-items-center rounded-2">
+                    <span class="d-flex align-items-center text-center justify-content-center" id="boss" style="width: 90vw; height:100%;">
+                        <label class="kill w-100 fw-bold text-white rounded-2"> 
+                            <input id="options3" class="wed p-3 text-light my-1" type="text" placeholder="Third option">
+                        </label>
+                    </span>
+                </div>
+    
+                <div class="mot mt-2 d-flex align-items-center rounded-2">
+                    <span class="d-flex align-items-center text-center justify-content-center" id="boss" style="width: 90vw; height:100%;">
+                        <label class="kill w-100 fw-bold text-white rounded-2"> 
+                            <input id="options4" class="wed p-3 text-light my-1" type="text" placeholder="Fourth option">
+                        </label>
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="text-center">
+                <input id="rAnswer" type="text" class="mt-2 p-4 mt-4 lad text-light" placeholder="Right answer">
+            </div>
+            <div class="d-flex justify-content-between w-75 mt-2 mx-auto">
+                <button class="btn btn-primary p-2 mt-3" onclick="saves(event)">Save</button>
+                <button class="btn btn-success p-2 mt-3" onclick="submits(event)">Submit</button>
+            </div>
         </form>
+
     </main>
 </body>
 
 </html>
 
 <script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
-        authDomain: "isammy-k.firebaseapp.com",
-        projectId: "isammy-k",
-        storageBucket: "isammy-k.appspot.com",
-        messagingSenderId: "243915862365",
-        appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
-    };
+  const firebaseConfig = {
+    apiKey: "AIzaSyCwVfH-A0BmPjRWef4VEdk4IAImHFLA1Ek",
+    authDomain: "isammy-app.firebaseapp.com",
+    projectId: "isammy-app",
+    storageBucket: "isammy-app.appspot.com",
+    messagingSenderId: "581637815341",
+    appId: "1:581637815341:web:33eb5fc8ad00c97a148ca4",
+    measurementId: "G-LXBM3HSSTT"
+  };
     var provider = new firebase.auth.GoogleAuthProvider();
     const app = firebase.initializeApp(firebaseConfig);
 </script>
 <script>
     const db = firebase.firestore();
 
-    let codee = Math.floor(Math.random() * 1000000);
-    console.log(codee)
+     let codee;
+    // console.log(codee)
     let quest = document.getElementById("quest")
     let options1 = document.getElementById("options1")
     let options2 = document.getElementById("options2")
@@ -62,6 +138,15 @@
     let userQuizs = []
     let index = localStorage.getItem('userIndex') || 0;
     let myQuiz;
+
+    let storedcode = localStorage.getItem('generatedcode');
+    if(storedcode){
+        codee = storedcode;
+        
+    }else{
+        codee = Math.floor(Math.random() * 1000000)
+        localStorage.setItem('generatedcode', codee)
+    }
 
     let lenght = userQuiz.length
     lent.innerHTML =  lenght || 0

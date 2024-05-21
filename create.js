@@ -1,11 +1,12 @@
 
- const firebaseConfig = {
-apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
-authDomain: "isammy-k.firebaseapp.com",
-projectId: "isammy-k",
-storageBucket: "isammy-k.appspot.com",
-messagingSenderId: "243915862365",
-appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
+const firebaseConfig = {
+  apiKey: "AIzaSyCwVfH-A0BmPjRWef4VEdk4IAImHFLA1Ek",
+  authDomain: "isammy-app.firebaseapp.com",
+  projectId: "isammy-app",
+  storageBucket: "isammy-app.appspot.com",
+  messagingSenderId: "581637815341",
+  appId: "1:581637815341:web:33eb5fc8ad00c97a148ca4",
+  measurementId: "G-LXBM3HSSTT"
 };
   
   // Initialize Firebase

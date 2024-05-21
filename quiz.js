@@ -7,13 +7,13 @@
 //   appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
 //  };
 const firebaseConfig = {
-  apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
-  authDomain: "isammy-k.firebaseapp.com",
-  projectId: "isammy-k",
-  storageBucket: "isammy-k.appspot.com",
-  messagingSenderId: "243915862365",
-  appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
-  measurementId: "G-70P28M0HYN"
+  apiKey: "AIzaSyCwVfH-A0BmPjRWef4VEdk4IAImHFLA1Ek",
+  authDomain: "isammy-app.firebaseapp.com",
+  projectId: "isammy-app",
+  storageBucket: "isammy-app.appspot.com",
+  messagingSenderId: "581637815341",
+  appId: "1:581637815341:web:33eb5fc8ad00c97a148ca4",
+  measurementId: "G-LXBM3HSSTT"
 };
 
 
@@ -1462,11 +1462,40 @@ let quiz;
 let seconds = 10;
 
 kojo.style.display = "none"
+
+// let play =  document.getElementById('play')
+// let pause =  document.getElementById('pause')
+// let music = document.getElementById('bg-music')
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bg-music');
+  audio.muted = false; // Unmute the audio after it's loaded and started muted
+  audio.play().catch(error => {
+      console.log('Autoplay failed:', error);
+  });
+});
+
+function toggleswitch() {
+  const audio = document.getElementById('bg-music');
+  const playIcon = document.getElementById('play');
+  const pauseIcon = document.getElementById('pause');
+
+  if (audio.paused) {
+      audio.play();
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+  } else {
+      audio.pause();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = 'block';
+  }
+}
 // console.log(currentindex);
 
 // function setIt() {
-//   quiz4.questions.forEach((el, i) => {
-//     db.collection("419234").doc(`id${i}`).set(el)
+//   quiz1.questions.forEach((el, i) => {
+//     db.collection("151030").doc(`id${i}`).set(el)
 //       .then(() => {
 //         console.log("Document successfully written!");
 //       })
@@ -1474,6 +1503,7 @@ kojo.style.display = "none"
 //         console.error("Error writing document: ", error);
 //       });
 //   })
+
 // }
 // setIt();
 
@@ -1512,7 +1542,7 @@ kojo.style.display = "none"
 
 let gamePin = JSON.parse(localStorage.getItem("userPin"))
 let pin = gamePin.toString();
-console.log(pin);
+// console.log(pin);
 async function getQue() {
   console.log("Hey");
   db.collection(pin).where("hasStarted", "==", true).where("index", "==", currentindex)
@@ -1520,8 +1550,8 @@ async function getQue() {
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        console.log("Got here");
+        // console.log(doc.id, " => ", doc.data());
+        // console.log("Got here");
         // quiz = doc.data()
         // console.log(quiz);
         // quizz.push(quiz);
@@ -1635,7 +1665,7 @@ function showlb() {
   console.log("Number of documents:", numberOfDocs);
   nume = numberOfDocs
   console.log(nume);
-  let nextQuesbtn = `<button class="btn btn-primary my-2" onclick="net()"><span> NEXT QUESTION</span></button>`;
+  let nextQuesbtn = `<button class="btn btn-primary my-3" onclick="net()"><span> NEXT QUESTION</span></button>`;
   // let endgame = `<button class="btn btn-danger my-2" onclick="endd()"><span> END QUIZ</span></button>`
   showUsername.innerHTML += nextQuesbtn;
   if(currentindex >= nume - 1){
@@ -1663,7 +1693,7 @@ function showlb() {
       players.forEach((player, index) => {
           const rank = index + 1;
           const userHTML = `
-          <div class="d-flex justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%;">
+          <div class="d-flex gaid justify-content-between align-items-center pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%;">
           <div class="d-flex align-items-center">
             <span class="h5 fw-bold">${rank}.</span>
             <img src="${player.avatar}" class="imad mx-2" alt="">

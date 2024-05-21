@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Waiting page</title>
+  <link rel="shortcut icon" href="gengen.jpg" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
 </head>
 <style>
   * {
@@ -302,12 +303,13 @@
 </html>
 <script>
   const firebaseConfig = {
-    apiKey: "AIzaSyDtpT23EPLkTS9kfEf6Aa02Wli2Ehgfpqw",
-    authDomain: "isammy-k.firebaseapp.com",
-    projectId: "isammy-k",
-    storageBucket: "isammy-k.appspot.com",
-    messagingSenderId: "243915862365",
-    appId: "1:243915862365:web:e0c543ab2caf0ed241b8b4",
+    apiKey: "AIzaSyCwVfH-A0BmPjRWef4VEdk4IAImHFLA1Ek",
+    authDomain: "isammy-app.firebaseapp.com",
+    projectId: "isammy-app",
+    storageBucket: "isammy-app.appspot.com",
+    messagingSenderId: "581637815341",
+    appId: "1:581637815341:web:33eb5fc8ad00c97a148ca4",
+    measurementId: "G-LXBM3HSSTT"
   };
   var provider = new firebase.auth.GoogleAuthProvider();
   const app = firebase.initializeApp(firebaseConfig);
@@ -372,7 +374,7 @@
     userRef.delete()
       .then(() => {
         console.log("User removed successfully");
-        window.location.href = "input.html";
+        window.location.href = "index.html";
       })
       .catch((error) => {
         console.error("Error removing user: ", error);
