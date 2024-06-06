@@ -14,11 +14,11 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-storage-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
 
-    
+
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         background-image: url(https://pbs.twimg.com/media/EtJszZvW4AE_sUb?format=jpg&name=4096x4096);
         background-size: cover;
         background-repeat: no-repeat;
@@ -26,15 +26,17 @@
         height: 100vh !important;
     }
 
-    .imad{
-    width: 30px;
-    border-radius: 100%;
-  }
-  .gaid{
+    .imad {
+        width: 30px;
+        border-radius: 100%;
+    }
+
+    .gaid {
         background-color: rgba(220, 220, 220, 0.393) !important;
         color: white !important;
     }
-    .ende{
+
+    .ende {
         display: flex;
         justify-content: center;
         position: fixed;
@@ -42,18 +44,19 @@
         right: 0;
         left: 0;
     }
+
     .btn1a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-           height: 40px;
-           padding-top: 20px;
-            border-radius: 20%;
-            font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 40px;
+        padding-top: 20px;
+        border-radius: 20%;
+        font-size: 24px;
         background-color: rgba(220, 220, 220, 0.393) !important;
-            
-        }
+
+    }
 </style>
 
 <body onload="">
@@ -95,12 +98,12 @@
             <div></div>
         </div>
     </main>
-    
+
     <main class="ende z-1">
         <audio id="bg-music" src="./music/07 Fastest Finger First.mp3" type="audio/mpeg" loop></audio>
         <button class="btn btn1a" onclick="toggleswitch()">
-           <p class="cursor-pointer"  style="display:none" id="play">  <i class="bi bi-volume-up-fill  fs-2"></i></p>
-           <p class="cursor-pointer" id="pause"><i class="bi bi-volume-mute-fill  fs-2"></i></p>
+            <p class="cursor-pointer" style="display:none" id="play"> <i class="bi bi-volume-up-fill  fs-2"></i></p>
+            <p class="cursor-pointer" id="pause"><i class="bi bi-volume-mute-fill  fs-2"></i></p>
         </button>
     </main>
 </body>
@@ -108,22 +111,22 @@
 </html>
 
 <script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyCwVfH-A0BmPjRWef4VEdk4IAImHFLA1Ek",
-    authDomain: "isammy-app.firebaseapp.com",
-    projectId: "isammy-app",
-    storageBucket: "isammy-app.appspot.com",
-    messagingSenderId: "581637815341",
-    appId: "1:581637815341:web:33eb5fc8ad00c97a148ca4",
-    measurementId: "G-LXBM3HSSTT"
-  };
+    const firebaseConfig = {
+        apiKey: "AIzaSyCwVfH-A0BmPjRWef4VEdk4IAImHFLA1Ek",
+        authDomain: "isammy-app.firebaseapp.com",
+        projectId: "isammy-app",
+        storageBucket: "isammy-app.appspot.com",
+        messagingSenderId: "581637815341",
+        appId: "1:581637815341:web:33eb5fc8ad00c97a148ca4",
+        measurementId: "G-LXBM3HSSTT"
+    };
     // Initialize Firebase
     const app = firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 </script>
 
 <script>
-  
+
 
 
     let displayquestion = document.getElementById("display-question")
@@ -153,28 +156,28 @@
 
 
     document.addEventListener('DOMContentLoaded', () => {
-  const audio = document.getElementById('bg-music');
-  audio.muted = false; // Unmute the audio after it's loaded and started muted
-  audio.play().catch(error => {
-      console.log('Autoplay failed:', error);
-  });
-});
+        const audio = document.getElementById('bg-music');
+        audio.muted = false; // Unmute the audio after it's loaded and started muted
+        audio.play().catch(error => {
+            console.log('Autoplay failed:', error);
+        });
+    });
 
-function toggleswitch() {
-  const audio = document.getElementById('bg-music');
-  const playIcon = document.getElementById('play');
-  const pauseIcon = document.getElementById('pause');
+    function toggleswitch() {
+        const audio = document.getElementById('bg-music');
+        const playIcon = document.getElementById('play');
+        const pauseIcon = document.getElementById('pause');
 
-  if (audio.paused) {
-      audio.play();
-      playIcon.style.display = 'block';
-      pauseIcon.style.display = 'none';
-  } else {
-      audio.pause();
-      playIcon.style.display = 'none';
-      pauseIcon.style.display = 'block';
-  }
-}
+        if (audio.paused) {
+            audio.play();
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+        } else {
+            audio.pause();
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+        }
+    }
 
 
     setTimeout(() => {
@@ -195,7 +198,7 @@ function toggleswitch() {
 
     let gamePin = JSON.parse(localStorage.getItem("userPin"))
     let pin = gamePin.toString();
-    
+
 
     db.collection(pin).where("hasStarted", "==", true)
         .onSnapshot((querySnapshot) => {
@@ -248,37 +251,37 @@ function toggleswitch() {
     let avatar;
     function showlb() {
 
- var docRef = db.collection(pin);
-  docRef.get().then((querySnapshot) => {
-  const numberOfDocs = querySnapshot.size;
-  console.log("Number of documents:", numberOfDocs);
-  nume = numberOfDocs
-  if(currentindex >= nume - 1){
-    window.location.href = 'leaderboards.html'
-  }
-  }).catch((error) => {
-      console.log(error);
-  });
-
-    showUsername.innerHTML = "";
-    db.collection("posts").where("gamepin", "==", parseInt(pin)).get()
-    .then((querySnapshot) => {
-        const players = [];
-        querySnapshot.forEach((doc) => {
-        const username = doc.id;
-        const score = doc.data().score;
-        avatar = doc.data().avatar;
-        players.push({ username, score , avatar});
-        console.log(players);
+        var docRef = db.collection(pin);
+        docRef.get().then((querySnapshot) => {
+            const numberOfDocs = querySnapshot.size;
+            console.log("Number of documents:", numberOfDocs);
+            nume = numberOfDocs
+            if (currentindex >= nume - 1) {
+                window.location.href = 'leaderboards.html'
+            }
+        }).catch((error) => {
+            console.log(error);
         });
 
-        // Sort the players by score in descending order
-        players.sort((a, b) => b.score - a.score);
+        showUsername.innerHTML = "";
+        db.collection("posts").where("gamepin", "==", parseInt(pin)).get()
+            .then((querySnapshot) => {
+                const players = [];
+                querySnapshot.forEach((doc) => {
+                    const username = doc.id;
+                    const score = doc.data().score;
+                    avatar = doc.data().avatar;
+                    players.push({ username, score, avatar });
+                    console.log(players);
+                });
 
-        // Iterate over the sorted players array and display them with their ranks
-        players.forEach((player, index) => {
-            const rank = index + 1;
-            const userHTML = `
+                // Sort the players by score in descending order
+                players.sort((a, b) => b.score - a.score);
+
+                // Iterate over the sorted players array and display them with their ranks
+                players.forEach((player, index) => {
+                    const rank = index + 1;
+                    const userHTML = `
             <div class="d-flex justify-content-between gaid pt-2 px-2 mx-auto bg-white rounded-4" style="width: 90%;">
             <div class="d-flex align-items-center">
               <span class="h5 fw-bold">${rank}.</span>
@@ -288,10 +291,10 @@ function toggleswitch() {
             <p class="fs-3 fw-bold">${player.score}</p>
           </div>
           <br>`;
-            showUsername.innerHTML += userHTML;
-        });
-    });
-}
+                    showUsername.innerHTML += userHTML;
+                });
+            });
+    }
 
     showlb();
 
@@ -330,8 +333,8 @@ function toggleswitch() {
     }
 
     function anotherFunction(pscore) {
-    console.log("Updated pscore:", pscore);
-}
+        console.log("Updated pscore:", pscore);
+    }
 
 
 
@@ -348,23 +351,20 @@ function toggleswitch() {
 
         if (currentAns === selected) {
             recieve += pscore;
-            localStorage.setItem('score', recieve.toString()); 
+            localStorage.setItem('score', recieve.toString());
             let userid = JSON.parse(localStorage.getItem('username'))
-        if (userid) {
-            // Save the data to Firestore immediately after the user clicks on an answer
-            db.collection("posts").doc(userid).set({
-                username: userid,
-                score: recieve,
-                gamepin: parseInt(pin),
-                avatar : avatar
-            })
-                .then(() => {
-                    console.log("Data saved to Firestore:", recieve);
+            if (userid) {
+                // Update only the score in Firestore immediately after the user clicks on an answer
+                db.collection("posts").doc(userid).update({
+                    score: recieve
                 })
-                .catch((error) => {
-                    console.error("Error saving data to Firestore: ", error);
-                });
-        }
+                    .then(() => {
+                        console.log("Score updated in Firestore:", recieve);
+                    })
+                    .catch((error) => {
+                        console.error("Error updating score in Firestore: ", error);
+                    });
+            }
             console.log(recieve);
             ev.target.parentElement.style.backgroundColor = "green";
         } else {
@@ -376,42 +376,42 @@ function toggleswitch() {
             });
         }
 
-        
-        
+
+
         // await db.collection("posts").get().then((querySnapshot) => {
-            //     querySnapshot.forEach((doc) => {
-                //          userid = doc.id;
-                //     });
-                // });
-                // console.log(userid);
-                
-                // Check if the user ID is available
-      
+        //     querySnapshot.forEach((doc) => {
+        //          userid = doc.id;
+        //     });
+        // });
+        // console.log(userid);
+
+        // Check if the user ID is available
+
     }
 
 
 
-function listenForEndGame() {
-  db.collection(pin)
-    .where("endGame", "==", true)
-    .onSnapshot((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        const endGame = doc.data().endGame;
-        if (endGame === true) {
-          // Perform your desired actions when endGame is true
-          localStorage.removeItem('score')
-          localStorage.removeItem('username')
-          localStorage.removeItem('selectedAvatar')
-          localStorage.removeItem('userPin')
-          window.location.href = "input.html";
-        }
-      });
-    });
-}
+    function listenForEndGame() {
+        db.collection(pin)
+            .where("endGame", "==", true)
+            .onSnapshot((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const endGame = doc.data().endGame;
+                    if (endGame === true) {
+                        // Perform your desired actions when endGame is true
+                        localStorage.removeItem('score')
+                        localStorage.removeItem('username')
+                        localStorage.removeItem('selectedAvatar')
+                        localStorage.removeItem('userPin')
+                        window.location.href = "input.html";
+                    }
+                });
+            });
+    }
 
 
-// Call the function to start listening for changes
-listenForEndGame();
+    // Call the function to start listening for changes
+    listenForEndGame();
 
 
 </script>
