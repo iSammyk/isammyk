@@ -1447,6 +1447,954 @@ let quiz7 = {
     
 };
 
+// disney
+
+let quiz8 = {
+  gamePin: "614753",
+  hasStarted: false, 
+   questions: [
+    {
+      index: 0,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the toy cowboy in Toy Story?",
+      options: ["Buzz Lightyear", "Woody", "Jessie", "Bullseye"],
+      correctOption: "Woody"
+    },
+    {
+      index: 1,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Disney movie features a young deer named Bambi?",
+      options: ["The Lion King", "Bambi", "Dumbo", "Snow White"],
+      correctOption: "Bambi"
+    },
+    {
+      index: 2,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In which Disney movie does the character Mufasa appear?",
+      options: ["The Jungle Book", "The Lion King", "Aladdin", "Hercules"],
+      correctOption: "The Lion King"
+    },
+    {
+      index: 3,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the princess in the movie 'The Princess and the Frog'?",
+      options: ["Ariel", "Tiana", "Belle", "Mulan"],
+      correctOption: "Tiana"
+    },
+    {
+      index: 4,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What kind of animal is Disney's Dumbo?",
+      options: ["Elephant", "Lion", "Mouse", "Dog"],
+      correctOption: "Elephant"
+    },
+    {
+      index: 5,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the main villain in 'The Little Mermaid'?",
+      options: ["Scar", "Ursula", "Jafar", "Hades"],
+      correctOption: "Ursula"
+    },
+    {
+      index: 6,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of Aladdin's monkey?",
+      options: ["Rajah", "Abu", "Iago", "Zazu"],
+      correctOption: "Abu"
+    },
+    {
+      index: 7,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Beauty and the Beast', what is the name of Belle's father?",
+      options: ["Maurice", "Gaston", "Lefou", "Philippe"],
+      correctOption: "Maurice"
+    },
+    {
+      index: 8,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the snowman in 'Frozen'?",
+      options: ["Elsa", "Anna", "Kristoff", "Olaf"],
+      correctOption: "Olaf"
+    },
+    {
+      index: 9,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'The Lion King', what is Simba's mother's name?",
+      options: ["Nala", "Sarabi", "Sarafina", "Shenzi"],
+      correctOption: "Sarabi"
+    },
+    {
+      index: 10,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "Who is the fashion-obsessed villain in '101 Dalmatians'?",
+      options: ["Maleficent", "Cruella de Vil", "Queen of Hearts", "Lady Tremaine"],
+      correctOption: "Cruella de Vil"
+    },
+    {
+      index: 11,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the dragon in 'Mulan'?",
+      options: ["Mushu", "Sisu", "Falkor", "Toothless"],
+      correctOption: "Mushu"
+    },
+    {
+      index: 12,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "Which Disney movie features a flying elephant?",
+      options: ["Dumbo", "Bambi", "The Jungle Book", "Tarzan"],
+      correctOption: "Dumbo"
+    },
+    {
+      index: 13,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Finding Nemo', what kind of fish is Dory?",
+      options: ["Clownfish", "Surgeonfish", "Angelfish", "Goldfish"],
+      correctOption: "Surgeonfish"
+    },
+    {
+      index: 14,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Moana', what is the name of the demigod who accompanies Moana?",
+      options: ["Maui", "Hercules", "Zeus", "Poseidon"],
+      correctOption: "Maui"
+    },
+    {
+      index: 15,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In which Disney movie do characters sing 'A Whole New World'?",
+      options: ["Cinderella", "Aladdin", "The Little Mermaid", "Beauty and the Beast"],
+      correctOption: "Aladdin"
+    },
+    {
+      index: 16,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the cat in 'The Aristocats'?",
+      options: ["Figaro", "Oliver", "Thomas O'Malley", "Duchess"],
+      correctOption: "Duchess"
+    },
+    {
+      index: 17,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Peter Pan', what is the name of Wendy's dog?",
+      options: ["Nana", "Lulu", "Max", "Shadow"],
+      correctOption: "Nana"
+    },
+    {
+      index: 18,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the tea cup in 'Beauty and the Beast'?",
+      options: ["Chip", "Potts", "Lumière", "Cogsworth"],
+      correctOption: "Chip"
+    },
+    {
+      index: 19,
+      gamePin: "614753",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Cinderella', what is the name of the fairy godmother?",
+      options: ["Flora", "Fauna", "Merryweather", "She is just known as the Fairy Godmother"],
+      correctOption: "She is just known as the Fairy Godmother"
+    }
+  ]
+  
+}
+
+// random shows
+let quiz9 = {
+  gamePin: "189432",
+  hasStarted: false, 
+   questions:[
+    {
+      index: 0,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Friends', what is the name of Ross Geller's second wife?",
+      options: ["Rachel", "Emily", "Carol", "Monica"],
+      correctOption: "Emily"
+    },
+    {
+      index: 1,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the coffee shop in 'Friends'?",
+      options: ["Central Coffee", "Central Park", "Central Perk", "Central Café"],
+      correctOption: "Central Perk"
+    },
+    {
+      index: 2,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Breaking Bad', what is Walter White's alias?",
+      options: ["Heisenberg", "Eisenhower", "Hindenburg", "Eisenstein"],
+      correctOption: "Heisenberg"
+    },
+    {
+      index: 3,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "Which TV show features a character named Sheldon Cooper?",
+      options: ["How I Met Your Mother", "The Big Bang Theory", "Friends", "Modern Family"],
+      correctOption: "The Big Bang Theory"
+    },
+    {
+      index: 4,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Game of Thrones', what is the name of Jon Snow's direwolf?",
+      options: ["Ghost", "Nymeria", "Summer", "Grey Wind"],
+      correctOption: "Ghost"
+    },
+    {
+      index: 5,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the fictional paper company in 'The Office'?",
+      options: ["Dunder Mifflin", "Wernham Hogg", "Pied Piper", "Sterling Cooper"],
+      correctOption: "Dunder Mifflin"
+    },
+    {
+      index: 6,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Stranger Things', what is Eleven's favorite food?",
+      options: ["Waffles", "Pancakes", "Pizza", "Hamburgers"],
+      correctOption: "Waffles"
+    },
+    {
+      index: 7,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "Which cartoon features characters named Homer, Marge, Bart, Lisa, and Maggie?",
+      options: ["Family Guy", "The Simpsons", "South Park", "Futurama"],
+      correctOption: "The Simpsons"
+    },
+    {
+      index: 8,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'The Simpsons', what is the name of Bart's best friend?",
+      options: ["Nelson", "Ralph", "Milhouse", "Martin"],
+      correctOption: "Milhouse"
+    },
+    {
+      index: 9,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the name of the main character in 'Sherlock', played by Benedict Cumberbatch?",
+      options: ["Sherlock Holmes", "John Watson", "Jim Moriarty", "Greg Lestrade"],
+      correctOption: "Sherlock Holmes"
+    },
+    {
+      index: 10,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Friends', what is Chandler Bing's middle name?",
+      options: ["Muriel", "Marcel", "Michael", "Mitchell"],
+      correctOption: "Muriel"
+    },
+    {
+      index: 11,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'The Big Bang Theory', what is Howard Wolowitz's occupation?",
+      options: ["Physicist", "Engineer", "Biologist", "Chemist"],
+      correctOption: "Engineer"
+    },
+    {
+      index: 12,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "Which TV series is set in the fictional town of Hawkins, Indiana?",
+      options: ["Riverdale", "Stranger Things", "Twin Peaks", "Buffy the Vampire Slayer"],
+      correctOption: "Stranger Things"
+    },
+    {
+      index: 13,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'The Mandalorian', what is the name of the Child?",
+      options: ["Yoda", "Grogu", "Luke", "Boba"],
+      correctOption: "Grogu"
+    },
+    {
+      index: 14,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Rick and Morty', what is the name of Morty's sister?",
+      options: ["Summer", "Beth", "Jessica", "Tammy"],
+      correctOption: "Summer"
+    },
+    {
+      index: 15,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "Which TV show features a chemistry teacher turned methamphetamine manufacturer?",
+      options: ["Better Call Saul", "The Sopranos", "Breaking Bad", "Narcos"],
+      correctOption: "Breaking Bad"
+    },
+    {
+      index: 16,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Parks and Recreation', what is the name of the town where the show is set?",
+      options: ["Pawnee", "Springfield", "Scranton", "Quahog"],
+      correctOption: "Pawnee"
+    },
+    {
+      index: 17,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'Stranger Things', who is the police chief of Hawkins?",
+      options: ["Jim Hopper", "Steve Harrington", "Mike Wheeler", "Jonathan Byers"],
+      correctOption: "Jim Hopper"
+    },
+    {
+      index: 18,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "Which animated series features the Griffin family?",
+      options: ["Family Guy", "The Simpsons", "South Park", "American Dad"],
+      correctOption: "Family Guy"
+    },
+    {
+      index: 19,
+      gamePin: "189432",
+      hasStarted: false,
+      endGame: false,
+      question: "In 'The Office', what is the name of Michael Scott's boss?",
+      options: ["David Wallace", "Jan Levinson", "Ryan Howard", "Toby Flenderson"],
+      correctOption: "David Wallace"
+    }
+  ]
+  
+}
+
+
+// math
+
+let quiz10 = {
+  gamePin: "215009",
+  hasStarted: false, 
+  questions:[
+    {
+      index: 0,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the value of π (pi) to two decimal places?",
+      options: ["3.12", "3.14", "3.16", "3.18"],
+      correctOption: "3.14"
+    },
+    {
+      index: 1,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "If a triangle has angles of 30° and 60°, what is the third angle?",
+      options: ["30°", "60°", "90°", "120°"],
+      correctOption: "90°"
+    },
+    {
+      index: 2,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the square root of 144?",
+      options: ["10", "11", "12", "13"],
+      correctOption: "12"
+    },
+    {
+      index: 3,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "If you have a 20% discount on a $50 item, how much will you pay?",
+      options: ["$30", "$35", "$40", "$45"],
+      correctOption: "$40"
+    },
+    {
+      index: 4,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the result of 9 x 8?",
+      options: ["64", "72", "81", "90"],
+      correctOption: "72"
+    },
+    {
+      index: 5,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the perimeter of a rectangle with length 5 and width 3?",
+      options: ["8", "15", "16", "18"],
+      correctOption: "16"
+    },
+    {
+      index: 6,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the value of 2^5?",
+      options: ["16", "32", "64", "128"],
+      correctOption: "32"
+    },
+    {
+      index: 7,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "If you divide 81 by 9, what do you get?",
+      options: ["7", "8", "9", "10"],
+      correctOption: "9"
+    },
+    {
+      index: 8,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is 15% of 200?",
+      options: ["20", "25", "30", "35"],
+      correctOption: "30"
+    },
+    {
+      index: 9,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "If a car is traveling at 60 miles per hour, how far will it travel in 2.5 hours?",
+      options: ["120 miles", "130 miles", "140 miles", "150 miles"],
+      correctOption: "150 miles"
+    },
+    {
+      index: 10,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the area of a circle with a radius of 7 (π = 3.14)?",
+      options: ["100.48", "153.86", "200.96", "256.78"],
+      correctOption: "153.86"
+    },
+    {
+      index: 11,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "Solve for x: 2x + 5 = 15",
+      options: ["x = 2", "x = 3", "x = 4", "x = 5"],
+      correctOption: "x = 5"
+    },
+    {
+      index: 12,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the greatest common divisor of 24 and 36?",
+      options: ["6", "8", "12", "18"],
+      correctOption: "12"
+    },
+    {
+      index: 13,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "If you subtract 8 from 20, what is the result?",
+      options: ["10", "11", "12", "13"],
+      correctOption: "12"
+    },
+    {
+      index: 14,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the decimal representation of 3/4?",
+      options: ["0.5", "0.6", "0.75", "0.8"],
+      correctOption: "0.75"
+    },
+    {
+      index: 15,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "How many degrees are in a right angle?",
+      options: ["30°", "60°", "90°", "120°"],
+      correctOption: "90°"
+    },
+    {
+      index: 16,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the product of 7 and 6?",
+      options: ["36", "42", "48", "54"],
+      correctOption: "42"
+    },
+    {
+      index: 17,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "If x = 3, what is the value of x^2 - 2x + 1?",
+      options: ["1", "2", "3", "4"],
+      correctOption: "4"
+    },
+    {
+      index: 18,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the sum of the interior angles of a triangle?",
+      options: ["90°", "180°", "270°", "360°"],
+      correctOption: "180°"
+    },
+    {
+      index: 19,
+      gamePin: "215009",
+      hasStarted: false,
+      endGame: false,
+      question: "If 5x = 20, what is the value of x?",
+      options: ["2", "3", "4", "5"],
+      correctOption: "4"
+    }
+  ]
+  
+}
+
+// musix
+let quiz11 = {
+  gamePin: "755234",
+  hasStarted: false, 
+    questions: [
+      {
+        index: 0,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Who is known as the 'King of Pop'?",
+        options: ["Elvis Presley", "Michael Jackson", "Prince", "Freddie Mercury"],
+        correctOption: "Michael Jackson"
+      },
+      {
+        index: 1,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which band released the album 'Abbey Road'?",
+        options: ["The Rolling Stones", "Pink Floyd", "The Who", "The Beatles"],
+        correctOption: "The Beatles"
+      },
+      {
+        index: 2,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "What genre of music is Taylor Swift primarily known for?",
+        options: ["Rock", "Country", "Pop", "Jazz"],
+        correctOption: "Pop"
+      },
+      {
+        index: 3,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which artist is known for the hit song 'Rolling in the Deep'?",
+        options: ["Adele", "Beyoncé", "Rihanna", "Katy Perry"],
+        correctOption: "Adele"
+      },
+      {
+        index: 4,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which composer is known for the 'Moonlight Sonata'?",
+        options: ["Mozart", "Beethoven", "Bach", "Chopin"],
+        correctOption: "Beethoven"
+      },
+      {
+        index: 5,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "What instrument does Yo-Yo Ma play?",
+        options: ["Piano", "Violin", "Cello", "Flute"],
+        correctOption: "Cello"
+      },
+      {
+        index: 6,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Who sang the song 'Imagine'?",
+        options: ["Paul McCartney", "John Lennon", "George Harrison", "Ringo Starr"],
+        correctOption: "John Lennon"
+      },
+      {
+        index: 7,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "What is the title of Queen's most famous song?",
+        options: ["We Will Rock You", "Bohemian Rhapsody", "Another One Bites the Dust", "Radio Ga Ga"],
+        correctOption: "Bohemian Rhapsody"
+      },
+      {
+        index: 8,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which rapper is known as 'Slim Shady'?",
+        options: ["Dr. Dre", "Snoop Dogg", "Kanye West", "Eminem"],
+        correctOption: "Eminem"
+      },
+      {
+        index: 9,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "What is the stage name of Robyn Fenty?",
+        options: ["Cardi B", "Rihanna", "Nicki Minaj", "Lizzo"],
+        correctOption: "Rihanna"
+      },
+      {
+        index: 10,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Who is the lead singer of U2?",
+        options: ["Bono", "The Edge", "Adam Clayton", "Larry Mullen Jr."],
+        correctOption: "Bono"
+      },
+      {
+        index: 11,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which famous musician was shot by a fan in 1980?",
+        options: ["Elvis Presley", "John Lennon", "Freddie Mercury", "Jim Morrison"],
+        correctOption: "John Lennon"
+      },
+      {
+        index: 12,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which band is known for the album 'Dark Side of the Moon'?",
+        options: ["Led Zeppelin", "Pink Floyd", "The Beatles", "The Rolling Stones"],
+        correctOption: "Pink Floyd"
+      },
+      {
+        index: 13,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which singer released the album '25'?",
+        options: ["Adele", "Beyoncé", "Taylor Swift", "Lady Gaga"],
+        correctOption: "Adele"
+      },
+      {
+        index: 14,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Who is the frontman of the band 'Nirvana'?",
+        options: [ "Dave Grohl", "Krist Novoselic", "Pat Smear", "Kurt Cobain"],
+        correctOption: "Kurt Cobain"
+      },
+      {
+        index: 15,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which artist is known for the hit single 'Shape of You'?",
+        options: ["Bruno Mars", "Ed Sheeran", "Justin Bieber", "Shawn Mendes"],
+        correctOption: "Ed Sheeran"
+      },
+      {
+        index: 16,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which band had a hit with the song 'Hotel California'?",
+        options: ["Fleetwood Mac", "The Eagles", "The Beach Boys", "The Doors"],
+        correctOption: "The Eagles"
+      },
+      {
+        index: 17,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "What genre is the band Metallica known for?",
+        options: ["Pop", "Rock", "Heavy Metal", "Jazz"],
+        correctOption: "Heavy Metal"
+      },
+      {
+        index: 18,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Which classical composer became deaf later in life?",
+        options: ["Mozart", "Bach",  "Beethoven", "Haydn"],
+        correctOption: "Beethoven"
+      },
+      {
+        index: 19,
+        gamePin: "755234",
+        hasStarted: false,
+        endGame: false,
+        question: "Who is known as the 'Queen of Pop'?",
+        options: ["Madonna", "Britney Spears",  "Whitney Houston", "Mariah Carey"],
+        correctOption: "Madonna"
+      }
+    ]
+  
+}
+
+// science
+let quiz12 = {
+  gamePin: "653630",
+  hasStarted: false, 
+    questions: [
+    {
+      index: 0,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the smallest unit of matter?",
+      options: ["Atom", "Molecule", "Cell", "Electron"],
+      correctOption: "Atom"
+    },
+    {
+      index: 1,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the process by which plants make their own food?",
+      options: ["Photosynthesis", "Respiration", "Fermentation", "Transpiration"],
+      correctOption: "Photosynthesis"
+    },
+    {
+      index: 2,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "Which planet is known as the 'Red Planet'?",
+      options: ["Venus", "Mars", "Jupiter", "Saturn"],
+      correctOption: "Mars"
+    },
+    {
+      index: 3,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the powerhouse of the cell?",
+      options: ["Mitochondrion", "Nucleus", "Ribosome", "Endoplasmic reticulum"],
+      correctOption: "Mitochondrion"
+    },
+    {
+      index: 4,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "Which force holds the nucleus of an atom together?",
+      options: ["Gravity", "Electromagnetic force", "Strong nuclear force", "Weak nuclear force"],
+      correctOption: "Strong nuclear force"
+    },
+    {
+      index: 5,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the chemical symbol for gold?",
+      options: ["Au", "Ag", "Fe", "Hg"],
+      correctOption: "Au"
+    },
+    {
+      index: 6,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "Which scientist proposed the theory of general relativity?",
+      options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+      correctOption: "Albert Einstein"
+    },
+    {
+      index: 7,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the Earth's primary source of energy?",
+      options: ["Wind", "Water", "Sun", "Geothermal"],
+      correctOption: "Sun"
+    },
+    {
+      index: 8,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the chemical symbol for table salt?",
+      options: ["NaCl", "H2O", "CO2", "O2"],
+      correctOption: "NaCl"
+    },
+    {
+      index: 9,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the study of fossils called?",
+      options: ["Biology", "Paleontology", "Archaeology", "Geology"],
+      correctOption: "Paleontology"
+    },
+    {
+      index: 10,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "Which planet is known as the 'Morning Star' or 'Evening Star'?",
+      options: ["Venus", "Mars", "Mercury", "Jupiter"],
+      correctOption: "Venus"
+    },
+    {
+      index: 11,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the hardest natural substance on Earth?",
+      options: ["Gold", "Diamond", "Iron", "Platinum"],
+      correctOption: "Diamond"
+    },
+    {
+      index: 12,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "Which gas is most abundant in the Earth's atmosphere?",
+      options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
+      correctOption: "Nitrogen"
+    },
+    {
+      index: 13,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the largest mammal on Earth?",
+      options: ["Elephant", "Blue whale", "Giraffe", "Hippopotamus"],
+      correctOption: "Blue whale"
+    },
+    {
+      index: 14,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the process by which plants release water vapor into the air?",
+      options: ["Photosynthesis", "Respiration", "Evaporation", "Transpiration"],
+      correctOption: "Transpiration"
+    },
+    {
+      index: 15,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the chemical symbol for helium?",
+      options: ["He", "H", "Ho", "Ha"],
+      correctOption: "He"
+    },
+    {
+      index: 16,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "Which scientist proposed the three laws of motion?",
+      options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+      correctOption: "Isaac Newton"
+    },
+    {
+      index: 17,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the chemical symbol for silver?",
+      options: ["Si", "Ag", "Au", "Sr"],
+      correctOption: "Ag"
+    },
+    {
+      index: 18,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the study of earthquakes called?",
+      options: ["Geography", "Meteorology", "Seismology", "Volcanology"],
+      correctOption: "Seismology"
+    },
+    {
+      index: 19,
+      gamePin: "653630",
+      hasStarted: false,
+      endGame: false,
+      question: "What is the chemical formula for water?",
+      options: ["HO", "CO2", "H2O", "O2"],
+      correctOption: "H2O"
+    }
+  ]
+
+}
+
 
 let knot = document.querySelector(".game-quiz-container");
 let currentindexs = localStorage.getItem('currentindex') ||  0;
@@ -1494,8 +2442,18 @@ function toggleswitch() {
 // console.log(currentindex);
 
 // function setIt() {
-//   quiz1.questions.forEach((el, i) => {
-//     db.collection("151030").doc(`id${i}`).set(el)
+//   quiz8.questions.forEach((el, i) => {
+//     db.collection("614753").doc(`id${i}`).set(el)
+//       .then(() => {
+//         console.log("Document successfully written!");
+//       })
+//       .catch((error) => {
+//         console.error("Error writing document: ", error);
+//       });
+//   })
+
+//   quiz9.questions.forEach((el, i) => {
+//     db.collection("189432").doc(`id${i}`).set(el)
 //       .then(() => {
 //         console.log("Document successfully written!");
 //       })

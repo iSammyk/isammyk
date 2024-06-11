@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting page</title>
+    <link rel="shortcut icon" href="gengen.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-storage-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background-image: url(blue.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh !important;
+    }
+
+    main {
+        background: linear-gradient(to right, rgb(97, 64, 73) black, black);
+    }
+
+    .bamm{
+        width: 30%;
+        background-color:transparent;
+        margin-top: 1%;
+        padding: 2%;
+        align-items: center;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        white-space: nowrap;
+        border-radius: 15px;
+        border: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .bamm{
+        width: 46%;
+        margin: 1%;
+      }
+
+      .matt{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-self: center;
+        text-align: center;
+        margin-top: 2%;
+    }
+
+}
+  
+
+    .matt{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-self: center;
+        text-align: center;
+        height: 65vh;
+        overflow-y: scroll;
+    }
+    .matt::-webkit-scrollbar{
+      display: none;
+    }
+
+    .loading {
+        --speed-of-animation: 0.9s;
+        --gap: 1px;
+        --first-color: #4c86f9;
+        --second-color: #49a84c;
+        --third-color: #f6bb02;
+        --fourth-color: #f6bb02;
+        --fifth-color: #2196f3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        gap: 6px;
+        height: 100px;
+    }
+
+    .loading span {
+        width: 4px;
+        height: 50px;
+        background: var(--first-color);
+        animation: scale var(--speed-of-animation) ease-in-out infinite;
+    }
+
+    .loading span:nth-child(2) {
+        background: var(--second-color);
+        animation-delay: -0.8s;
+    }
+
+    .loading span:nth-child(3) {
+        background: var(--third-color);
+        animation-delay: -0.7s;
+    }
+
+    .loading span:nth-child(4) {
+        background: var(--fourth-color);
+        animation-delay: -0.6s;
+    }
+
+    .loading span:nth-child(5) {
+        background: var(--fifth-color);
+        animation-delay: -0.5s;
+    }
+
+    @keyframes scale {
+
+        0%,
+        40%,
+        100% {
+            transform: scaleY(0.05);
+        }
+
+        20% {
+            transform: scaleY(1);
+        }
+    }
+
+    .loader {
+        --dim: 3rem;
+        width: var(--dim);
+        height: var(--dim);
+        position: relative;
+        animation: spin988 2s linear infinite;
+    }
+
+    .loader .circle {
+        --color: #1216f0;
+        --dim: 1.2rem;
+        width: var(--dim);
+        height: var(--dim);
+        background-color: var(--color);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .loader .circle:nth-child(1) {
+        top: 0;
+        left: 0;
+    }
+
+    .loader .circle:nth-child(2) {
+        top: 0;
+        right: 0;
+    }
+
+    .loader .circle:nth-child(3) {
+        bottom: 0;
+        left: 0;
+    }
+
+    .loader .circle:nth-child(4) {
+        bottom: 0;
+        right: 0;
+    }
+
+    @keyframes spin988 {
+        0% {
+            transform: scale(1) rotate(0);
+        }
+
+        20%,
+        25% {
+            transform: scale(1.3) rotate(90deg);
+        }
+
+        45%,
+        50% {
+            transform: scale(1) rotate(180deg);
+        }
+
+        70%,
+        75% {
+            transform: scale(1.3) rotate(270deg);
+        }
+
+        95%,
+        100% {
+            transform: scale(1) rotate(360deg);
+        }
+    }
+
+    .mass {
+        display: flex;
+        justify-content: right;
+    }
+
+    .buttons {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 0;
+        background-color: rgb(116, 162, 236);
+        letter-spacing: 1.5px;
+        font-size: 15px;
+        transition: all .3s ease;
+        box-shadow: rgb(58, 98, 169) 0px 10px 0px 0px;
+        color: hsl(0, 0%, 100%);
+    }
+
+    .buttons:hover {
+        box-shadow: rgb(25, 64, 126) 0px 7px 0px 0px;
+    }
+
+    .buttons:active {
+        background-color: rgb(29, 78, 157);
+        /*50, 168, 80*/
+        box-shadow: rgb(30, 78, 154) 0px 0px 0px 0px;
+        transform: translateY(5px);
+        transition: 200ms;
+    }
+
+    .bamm img {
+            width: 100px; /* Adjust as needed */
+            height: 100px; /* Adjust as needed */
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .bamm img:hover {
+            transform: scale(1.1);
+        }
+
+        @media screen and (max-width: 600px) {
+            .bamm img {
+                width: 80px; /* Adjust as needed for smaller screens */
+                height: 80px; /* Adjust as needed for smaller screens */
+            }
+        }
+</style>
+
+<body class="">
+    <main class="col-9 col-md-4 d-flex mx-auto mt-1">
+        <div class="container container-fluid w-100 text-light text-center fs-6 text-center"
+            style="display: flex; align-items: center;">
+            <p class="">
+                join at <a href="input.html" class="text-decoration-none text-light">www.iSammy.com</a> or with the
+                iSammy!app
+            </p>
+        </div>
+        <div class="container p-3 text-light"
+            style="font-weight: bold; border-bottom-left-radius: 30px; border-top-left-radius: 30px; width: max-content; background-color: rgb(0, 0, 0);">
+            <label for="code">Game pin:
+                <p id="hero" class="fs-4 text-center"></p>
+            </label>
+        </div>
+
+    </main>
+    <br> <br>
+    <div class=" mx-auto mt-1" style="width: 90%;">
+        <div class=" text-light mass">
+            <button class="buttons" onclick="sgame()"> Start Game
+            </button>
+        </div>
+        <div class="w-75 conatainer-fluid d-flex justify-content-center align-items-center mx-auto"
+            style="width: max-content;">
+            <h2 class="text-center text-light fs-3">Current players</h2>
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="">
+            <div class=" text-center text-light mt-1 matt " id="cont">
+                <div class="loader">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+   const firebaseConfig = {
+    apiKey: "AIzaSyCwVfH-A0BmPjRWef4VEdk4IAImHFLA1Ek",
+    authDomain: "isammy-app.firebaseapp.com",
+    projectId: "isammy-app",
+    storageBucket: "isammy-app.appspot.com",
+    messagingSenderId: "581637815341",
+    appId: "1:581637815341:web:33eb5fc8ad00c97a148ca4",
+    measurementId: "G-LXBM3HSSTT"
+  };
+    var provider = new firebase.auth.GoogleAuthProvider();
+    const app = firebase.initializeApp(firebaseConfig);
+</script>
+<script>
+    const db = firebase.firestore();
+    let cont = document.getElementById("cont")
+    let infos;
+    let admin = true;
+    let code = 755234;
+    localStorage.setItem('userPin', code)
+    let pin;
+    let pinn = localStorage.getItem('userPin')
+    pin = parseInt(pinn);
+    const hero = document.getElementById("hero");
+    let gamePin = pin;
+    hero.textContent = gamePin;
+
+    
+
+    // Initialize a counter variable
+    let userCount = 0;
+    let currentIndex = 0;
+    function looop() {
+        // Retrieve data from Firestore after initializing Firebase
+        db.collection("posts").where("gamepin", "==", pin).get()
+        .then((querySnapshot) => {
+            // Clear the old names by setting cont's innerHTML to an empty string
+            cont.innerHTML = "";
+            userCount = 0;
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.id;
+                const username = data;
+                 const avatar = doc.data().avatar
+                
+
+                // Check if "username" exists and is not empty
+                if (username) {
+                    // Increment the userCount and display it with the username
+                    userCount++;
+                    cont.innerHTML += `<button class=" text-light btn-fluid fs-5 bamm"> 
+                   ${userCount}: ${username}
+                   <img src="${avatar}" alt="Avatar" class='imag'>
+                                    
+                </button>
+                <br>`;
+                } else {
+                    // Handle the case where "username" is missing or empty
+                    console.log("Username is missing or empty:", username);
+                }
+            });
+        }).catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
+    }
+
+    const intervalId = setInterval(looop, 2000);
+    looop()
+
+    console.log(gamePin);
+    function sgame() {
+        db.collection(pin.toString())
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      doc.ref.update({
+        endGame: false,
+      })
+      .then(() => {
+        console.log("Document successfully updated!");
+      })
+      .catch((error) => {
+        console.error("Error updating document: ", error);
+      });
+    });
+  })
+  .catch((error) => {
+    console.error("Error getting documents: ", error);
+  });
+
+         console.log("ewjhbekjwekje");
+        localStorage.setItem('admin', JSON.stringify(admin))
+        clearInterval(intervalId, 1000)
+        var washingtonRef = db.collection(pin.toString()).doc(`id${currentIndex}`);
+        return washingtonRef.update({
+            hasStarted: true,
+        })
+            .then(() => {
+                console.log("Document successfully updated!");
+               window.location.href = 'quiz.html';
+            })
+            .catch((error) => {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+
+    }
+</script>
