@@ -12,6 +12,7 @@
         <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-storage-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth-compat.js"></script>
+        <script src="https://kit.fontawesome.com/8ac85c2cfe.js" crossorigin="anonymous"></script>
 </head>
 <style>
     * {
@@ -26,6 +27,44 @@
         background-position: center;
         height: 100vh !important;
     }
+    footer {
+      /* background-color: rgba(69, 65, 65, 0.666); */
+      color: #fff;
+      /* padding: 20px 0; */
+      position: fixed;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content:  space-between;
+      width: 40%;
+      margin: auto;
+  }
+
+  footer p {
+      margin: 0;
+      font-size: 10px;
+      color: rgb(249, 249, 249);
+  }
+  footer i{
+    font-size: 25px;
+  }
+  footer a{
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 500px) {
+          footer{
+            width: 90%;
+          }
+          footer p{
+            font-size: 13px;
+          }
+  }
+
 
     main {
         background: linear-gradient(to right, rgb(97, 64, 73) black, black);
@@ -291,6 +330,21 @@
             </div>
         </div>
     </div>
+
+    <footer class="text-center mt-5 py-2">
+        <p>&copy; Contact Developer
+        </p>
+        <a href="https://wa.me/+2349014887676?text=Hello%20there!"  target="_blank">
+         <i class="fa-brands fa-whatsapp text-success"></i>
+        </a>
+        <a href="https://x.com/iSammy_szn"  target="_blank">
+            <i class="fa-brands fa-x-twitter text-dark"> </i>
+        </a>
+        <a href="https://github.com/iSammyk"  target="_blank">
+            <i class="fa-brands fa-github text-black"></i>
+        </a>
+    </footer>
+
 </body>
 
 </html>
